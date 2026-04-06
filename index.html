@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stay at Cedar Ridge Retreat</title>
+  <meta name="description" content="A cozy vacation rental website starter template for GitHub Pages." />
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #52606d;
+      --accent: #8b5e3c;
+      --accent-dark: #6f4a2f;
+      --border: #e5e7eb;
+      --max: 1120px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 245, 242, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: var(--accent-dark); }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--border);
+    }
+
+    .hero {
+      padding: 4rem 0 2.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--accent-dark);
+      background: #efe4db;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0 0 1rem;
+    }
+
+    h1 { font-size: clamp(2rem, 5vw, 4rem); }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+    p { margin: 0 0 1rem; color: var(--muted); }
+
+    .hero-copy p {
+      max-width: 58ch;
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .hero-card,
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid rgba(229, 231, 235, 0.7);
+    }
+
+    .hero-image {
+      min-height: 420px;
+      background:
+        linear-gradient(rgba(31, 41, 51, 0.15), rgba(31, 41, 51, 0.25)),
+        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') center/cover;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.25rem;
+    }
+
+    .hero-badge {
+      background: rgba(255,255,255,0.92);
+      padding: 0.8rem 1rem;
+      border-radius: 14px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .stats {
+      padding: 1rem 0 3rem;
+    }
+
+    .stats-grid,
+    .amenities-grid,
+    .gallery-grid,
+    .reviews-grid,
+    .faq-grid,
+    .footer-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      padding: 1.2rem;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 0.2rem;
+    }
+
+    section {
+      padding: 2.5rem 0;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .amenities-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .amenity,
+    .review,
+    .faq-item {
+      padding: 1.25rem;
+    }
+
+    .amenity h3,
+    .review h3,
+    .faq-item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-item {
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #ddd;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .reviews-grid,
+    .faq-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta {
+      padding: 3rem 0 4rem;
+    }
+
+    .cta-box {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .site-footer {
+      padding: 2rem 0 3rem;
+      border-top: 1px solid var(--border);
+      background: #f3efe9;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.5fr 1fr 1fr;
+      align-items: start;
+    }
+
+    .muted-small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .split,
+      .footer-grid,
+      .stats-grid,
+      .amenities-grid,
+      .gallery-grid,
+      .reviews-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 2rem;
+      }
+
+      .hero-image {
+        min-height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">Cedar Ridge Retreat</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#location">Location</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#book" class="btn btn-primary">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Cozy mountain escape</span>
+          <h1>A warm, stylish stay made for slow mornings and weekend getaways.</h1>
+          <p>
+            This starter homepage is built for a vacation rental or Airbnb-style property.
+            Swap in your client's photos, property details, Airbnb link, and reviews to make it live fast.
+          </p>
+          <div class="hero-actions">
+            <a href="#book" class="btn btn-primary">Check Availability</a>
+            <a href="#gallery" class="btn btn-secondary">View Photos</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-image">
+            <div class="hero-badge">Sleeps 8 • 3 Bedrooms • Hot Tub • Fast WiFi</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="card stat"><strong>8 Guests</strong><span class="muted-small">Perfect for families</span></div>
+        <div class="card stat"><strong>3 Bedrooms</strong><span class="muted-small">Comfortable sleeping space</span></div>
+        <div class="card stat"><strong>2 Baths</strong><span class="muted-small">Modern and clean</span></div>
+        <div class="card stat"><strong>4.9 Rating</strong><span class="muted-small">Loved by past guests</span></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container split">
+        <div>
+          <div class="section-heading">
+            <div>
+              <h2>About the stay</h2>
+              <p>A simple section for your main property description.</p>
+            </div>
+          </div>
+          <p>
+            Nestled in a quiet scenic area, Cedar Ridge Retreat blends comfort, style, and convenience.
+            Guests can enjoy a fully stocked kitchen, cozy living room, outdoor seating, and beautiful views.
+            It is close enough to local attractions while still feeling private and relaxing.
+          </p>
+          <p>
+            Replace this text with the property's real description. Keep it clear, short, and focused on the experience.
+          </p>
+        </div>
+
+        <div class="card amenity">
+          <h3>Sleeping arrangements</h3>
+          <ul class="list">
+            <li>Bedroom 1: 1 King bed</li>
+            <li>Bedroom 2: 1 Queen bed</li>
+            <li>Bedroom 3: 2 Twin beds</li>
+            <li>Living room: 1 Sofa bed</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2>Photo gallery</h2>
+            <p>Use the best 6 to 9 images here.</p>
+          </div>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Bedroom interior" /></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Cozy bedroom" /></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="Kitchen and dining area" /></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" alt="Living room" /></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Bedroom with natural light" /></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=1200&q=80" alt="Outdoor seating area" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="amenities">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2>Amenities</h2>
+            <p>Highlight the features guests care about most.</p>
+          </div>
+        </div>
+        <div class="amenities-grid">
+          <div class="card amenity"><h3>Fully equipped kitchen</h3><p>Everything needed for short or extended stays.</p></div>
+          <div class="card amenity"><h3>Hot tub</h3><p>A memorable amenity that helps sell the stay.</p></div>
+          <div class="card amenity"><h3>Fast WiFi</h3><p>Ideal for streaming, remote work, and planning the trip.</p></div>
+          <div class="card amenity"><h3>Free parking</h3><p>Simple, clear benefit that guests always check for.</p></div>
+          <div class="card amenity"><h3>Washer and dryer</h3><p>Especially useful for longer bookings and families.</p></div>
+          <div class="card amenity"><h3>Self check-in</h3><p>Convenient arrival experience for guests.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="location">
+      <div class="container split">
+        <div>
+          <h2>Location</h2>
+          <p>
+            Use this section to describe the area without giving away the full exact address.
+            Mention nearby attractions, restaurants, trails, beaches, ski resorts, or downtown spots.
+          </p>
+          <ul class="list">
+            <li>10 minutes to downtown</li>
+            <li>15 minutes to hiking trails</li>
+            <li>Close to restaurants, coffee shops, and local attractions</li>
+          </ul>
+        </div>
+        <div class="card amenity">
+          <h3>Things to do nearby</h3>
+          <p>Pull ideas from the blog post, Airbnb guide, or local recommendations.</p>
+          <ul class="list">
+            <li>Sunrise hike</li>
+            <li>Local coffee shop</li>
+            <li>Winery or brewery</li>
+            <li>Seasonal events</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2>Guest reviews</h2>
+            <p>Add 2 to 4 strong reviews from Airbnb or VRBO.</p>
+          </div>
+        </div>
+        <div class="reviews-grid">
+          <div class="card review">
+            <h3>“Beautiful and exactly as pictured.”</h3>
+            <p>We loved the peaceful setting, the decor, and how clean everything was. Would absolutely stay again.</p>
+            <p class="muted-small">— Sample guest review</p>
+          </div>
+          <div class="card review">
+            <h3>“Perfect weekend getaway.”</h3>
+            <p>The hot tub, cozy bedrooms, and nearby activities made this an easy choice for our family trip.</p>
+            <p class="muted-small">— Sample guest review</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2>Frequently asked questions</h2>
+            <p>Answer common booking questions up front.</p>
+          </div>
+        </div>
+        <div class="faq-grid">
+          <div class="card faq-item"><h3>What time is check-in?</h3><p>Example: Check-in is after 4 PM and check-out is by 10 AM.</p></div>
+          <div class="card faq-item"><h3>Are pets allowed?</h3><p>Example: Pets are not allowed unless approved in advance.</p></div>
+          <div class="card faq-item"><h3>Is there parking?</h3><p>Example: Yes, there is free on-site parking for up to 3 vehicles.</p></div>
+          <div class="card faq-item"><h3>How do I book?</h3><p>Use the booking button below to link guests to Airbnb, VRBO, or a direct booking page.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="book">
+      <div class="container">
+        <div class="card cta-box">
+          <h2>Ready to book your stay?</h2>
+          <p>Replace the button link below with the Airbnb, VRBO, or direct booking link.</p>
+          <a class="btn btn-primary" href="https://www.airbnb.com/" target="_blank" rel="noopener noreferrer">Book on Airbnb</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Cedar Ridge Retreat</strong>
+        <p class="muted-small">Starter template for a vacation rental website on GitHub Pages.</p>
+      </div>
+      <div>
+        <strong>Quick Links</strong>
+        <p class="muted-small"><a href="#about">About</a><br><a href="#gallery">Gallery</a><br><a href="#reviews">Reviews</a></p>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <p class="muted-small">hello@example.com<br>(555) 555-5555</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
