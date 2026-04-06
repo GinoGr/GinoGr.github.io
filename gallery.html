@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stay at Seminary Hill Retreat</title>
+  <meta name="description" content="A cozy vacation rental website for Seminary Hill Retreat" />
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #52606d;
+      --accent: #8b5e3c;
+      --accent-dark: #6f4a2f;
+      --border: #e5e7eb;
+      --max: 1120px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 245, 242, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: var(--accent-dark); }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--border);
+    }
+
+    .hero {
+      padding: 4rem 0 2.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--accent-dark);
+      background: #efe4db;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0 0 1rem;
+    }
+
+    h1 { font-size: clamp(2rem, 5vw, 4rem); }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+    p { margin: 0 0 1rem; color: var(--muted); }
+
+    .hero-copy p {
+      max-width: 58ch;
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .hero-card,
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid rgba(229, 231, 235, 0.7);
+    }
+
+    .hero-image {
+      min-height: 420px;
+      background:
+        linear-gradient(rgba(31, 41, 51, 0.15), rgba(31, 41, 51, 0.25)),
+        url('Data/Gallery/IMG_4915.JPG') center/cover;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.25rem;
+    }
+
+    .hero-badge {
+      background: rgba(255,255,255,0.92);
+      padding: 0.8rem 1rem;
+      border-radius: 14px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .stats {
+      padding: 1rem 0 3rem;
+    }
+
+    .stats-grid,
+    .amenities-grid,
+    .gallery-grid,
+    .reviews-grid,
+    .faq-grid,
+    .footer-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      padding: 1.2rem;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 0.2rem;
+    }
+
+    section {
+      padding: 2.5rem 0;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .amenities-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .amenity,
+    .review,
+    .faq-item {
+      padding: 1.25rem;
+    }
+
+    .amenity h3,
+    .review h3,
+    .faq-item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .reviews-grid,
+    .faq-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta {
+      padding: 3rem 0 4rem;
+    }
+
+    .cta-box {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .site-footer {
+      padding: 2rem 0 3rem;
+      border-top: 1px solid var(--border);
+      background: #f3efe9;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.5fr 1fr 1fr;
+      align-items: start;
+    }
+
+    .muted-small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .gallery-page {
+  padding: 4rem 0;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gallery-header h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.gallery-header p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.gallery-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.gallery-nav a {
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.gallery-nav a:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.gallery-section {
+  margin-bottom: 3rem;
+}
+
+.gallery-section h2 {
+  margin-bottom: 1rem;
+}
+
+.horizontal-gallery {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-gallery::-webkit-scrollbar {
+  height: 10px;
+}
+
+.horizontal-gallery::-webkit-scrollbar-track {
+  background: #e9e4dd;
+  border-radius: 999px;
+}
+
+.horizontal-gallery::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+.gallery-card {
+  flex: 0 0 340px;
+  scroll-snap-align: start;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 255px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-card p {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .gallery-card {
+    flex: 0 0 82%;
+  }
+
+  .gallery-card img {
+    height: 220px;
+  }
+}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">Seminary Hill Retreat</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#gallery-page">Gallery</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#location">Location</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#book" class="btn btn-primary">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    
+    <section id="gallery" class="gallery-page">
+  <div class="container">
+    <div class="gallery-header">
+      <h1>Photo Gallery</h1>
+      <p>Explore Seminary Hill Retreat space by space.</p>
+    </div>
+
+    <div class="gallery-nav">
+      <a href="#exterior">Exterior</a>
+      <a href="#living-room">Living Room</a>
+      <a href="#kitchen">Kitchen</a>
+      <a href="#dining-room">Dining Room</a>
+      <a href="#master-bedroom">Master Bedroom</a>
+      <a href="#bedroom-2">Bedroom 2</a>
+      <a href="#bedroom-3">Bedroom 3</a>
+      <a href="#bathrooms">Bathrooms</a>
+      <a href="#hallway">Hallway</a>
+      <a href="#garage">Garage</a>
+      <a href="#closet">Closet</a>
+    </div>
+
+    <section id="exterior" class="gallery-section">
+      <h2>Exterior</h2>
+      <div class="horizontal-gallery">
+        <div class="gallery-card"><img src="Data/Gallery/Exterior 1.JPG" alt="Exterior view 1"><p>Exterior</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Exterior 2.JPG" alt="Exterior view 2"><p>Exterior</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Exterior 3.JPG" alt="Exterior view 3"><p>Exterior</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Exterior 4.JPG" alt="Exterior view 4"><p>Exterior</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Exterior 5.JPG" alt="Exterior view 5"><p>Exterior</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Exterior 6.JPG" alt="Exterior view 6"><p>Exterior</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Exterior 7.JPG" alt="Exterior view 7"><p>Exterior</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Exterior 8.JPG" alt="Exterior view 8"><p>Exterior</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Exterior 9.JPG" alt="Exterior view 9"><p>Exterior</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Exterior 10.JPG" alt="Exterior view 10"><p>Exterior</p></div>
+      </div>
+    </section>
+
+    <section id="living-room" class="gallery-section">
+      <h2>Living Room</h2>
+      <div class="horizontal-gallery">
+        <div class="gallery-card"><img src="Data/Gallery/Living Room 1.JPG" alt="Living room 1"><p>Living Room</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Living Room 2.JPG" alt="Living room 2"><p>Living Room</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Living Room 3.JPG" alt="Living room 3"><p>Living Room</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Living Room 4.JPG" alt="Living room 4"><p>Living Room</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Living Room 5.JPG" alt="Living room 5"><p>Living Room</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Living Room 6.JPG" alt="Living room 6"><p>Living Room</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Living Room 7.JPG" alt="Living room 7"><p>Living Room</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Living Room 8.JPG" alt="Living room 8"><p>Living Room</p></div>
+      </div>
+    </section>
+
+    <section id="kitchen" class="gallery-section">
+      <h2>Kitchen</h2>
+      <div class="horizontal-gallery">
+        <div class="gallery-card"><img src="Data/Gallery/Kitchen 1.JPG" alt="Kitchen 1"><p>Kitchen</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Kitchen 2.JPG" alt="Kitchen 2"><p>Kitchen</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Kitchen 3.JPG" alt="Kitchen 3"><p>Kitchen</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Kitchen 4.JPG" alt="Kitchen 4"><p>Kitchen</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Kitchen 5.JPG" alt="Kitchen 5"><p>Kitchen</p></div>
+      </div>
+    </section>
+
+    <section id="dining-room" class="gallery-section">
+      <h2>Dining Room</h2>
+      <div class="horizontal-gallery">
+        <div class="gallery-card"><img src="Data/Gallery/Dining Room 1.JPG" alt="Dining room 1"><p>Dining Room</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Dining Room 2.JPG" alt="Dining room 2"><p>Dining Room</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Dining Room 3.JPG" alt="Dining room 3"><p>Dining Room</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Dining Room 4.JPG" alt="Dining room 4"><p>Dining Room</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Dining Room 5.JPG" alt="Dining room 5"><p>Dining Room</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Dining Room 6.JPG" alt="Dining room 6"><p>Dining Room</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Dining Room 7.JPG" alt="Dining room 7"><p>Dining Room</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Dining Room 8.JPG" alt="Dining room 8"><p>Dining Room</p></div>
+      </div>
+    </section>
+
+    <section id="master-bedroom" class="gallery-section">
+      <h2>Master Bedroom</h2>
+      <div class="horizontal-gallery">
+        <div class="gallery-card"><img src="Data/Gallery/Master 1.JPG" alt="Master bedroom 1"><p>Master Bedroom</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Master 2.JPG" alt="Master bedroom 2"><p>Master Bedroom</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Master 3.JPG" alt="Master bedroom 3"><p>Master Bedroom</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Master 4.JPG" alt="Master bedroom 4"><p>Master Bedroom</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Master 5.JPG" alt="Master bedroom 5"><p>Master Bedroom</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Master 6.JPG" alt="Master bedroom 6"><p>Master Bedroom</p></div>
+      </div>
+    </section>
+
+    <section id="bedroom-2" class="gallery-section">
+      <h2>Bedroom 2</h2>
+      <div class="horizontal-gallery">
+        <div class="gallery-card"><img src="Data/Gallery/Bedroom 2.JPG" alt="Bedroom 2 view 1"><p>Bedroom 2</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Bedroom 2 -2.JPG" alt="Bedroom 2 view 2"><p>Bedroom 2</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Bedroom 2-3.JPG" alt="Bedroom 2 view 3"><p>Bedroom 2</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Bedroom 2-4.JPG" alt="Bedroom 2 view 4"><p>Bedroom 2</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Bedroom 2-5.JPG" alt="Bedroom 2 view 5"><p>Bedroom 2</p></div>
+      </div>
+    </section>
+
+    <section id="bedroom-3" class="gallery-section">
+      <h2>Bedroom 3</h2>
+      <div class="horizontal-gallery">
+        <div class="gallery-card"><img src="Data/Gallery/Bedroom 3-1.JPG" alt="Bedroom 3 view 1"><p>Bedroom 3</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Bedrrom 3-2.JPG" alt="Bedroom 3 view 2"><p>Bedroom 3</p></div>
+      </div>
+    </section>
+
+    <section id="bathrooms" class="gallery-section">
+      <h2>Bathrooms</h2>
+      <div class="horizontal-gallery">
+        <div class="gallery-card"><img src="Data/Gallery/Bathroom 1.JPG" alt="Bathroom"><p>Bathroom</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Master Bath 1.JPG" alt="Master bath"><p>Master Bath</p></div>
+      </div>
+    </section>
+
+    <section id="hallway" class="gallery-section">
+      <h2>Hallway</h2>
+      <div class="horizontal-gallery">
+        <div class="gallery-card"><img src="Data/Gallery/Hallway 1.JPG" alt="Hallway 1"><p>Hallway</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Hallway 2.JPG" alt="Hallway 2"><p>Hallway</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Hallway 3.JPG" alt="Hallway 3"><p>Hallway</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Hallway 5.JPG" alt="Hallway 5"><p>Hallway</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Hallway 6.JPG" alt="Hallway 6"><p>Hallway</p></div>
+      </div>
+    </section>
+
+    <section id="garage" class="gallery-section">
+      <h2>Garage</h2>
+      <div class="horizontal-gallery">
+        <div class="gallery-card"><img src="Data/Gallery/Garage 1.JPG" alt="Garage 1"><p>Garage</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Garage 2.JPG" alt="Garage 2"><p>Garage</p></div>
+      </div>
+    </section>
+
+    <section id="closet" class="gallery-section">
+      <h2>Closet</h2>
+      <div class="horizontal-gallery">
+        <div class="gallery-card"><img src="Data/Gallery/Master Closet 1.JPG" alt="Master closet 1"><p>Master Closet</p></div>
+        <div class="gallery-card"><img src="Data/Gallery/Master Closet 2.JPG" alt="Master closet 2"><p>Master Closet</p></div>
+      </div>
+    </section>
+  </div>
+</section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Seminary Hill Retreat</strong>
+      </div>
+      <div>
+        <strong>Quick Links</strong>
+        <p class="muted-small"><a href="#about">About</a><br><a href="#gallery">Gallery</a><br><a href="#reviews">Reviews</a></p>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <p class="muted-small">kenkindred@yahoo.com<br>(949) 292-3129</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
