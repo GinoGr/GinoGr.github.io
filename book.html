@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book | Seminary Hill Retreat</title>
+  <meta name="description" content="Book your stay at Seminary Hill Retreat." />
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #52606d;
+      --accent: #8b5e3c;
+      --accent-dark: #6f4a2f;
+      --border: #e5e7eb;
+      --max: 1120px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247,245,242,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(229,231,235,0.8);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      font-weight: bold;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover { background: var(--accent-dark); }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-secondary:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    .hero {
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--accent-dark);
+      background: #efe4db;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+    }
+
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    h2 { margin-bottom: 1rem; }
+
+    .lead {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .booking-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--surface);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .card p { color: var(--muted); }
+
+    .site-footer {
+      margin-top: 3rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      background: #f3efe9;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 800px) {
+      .booking-options,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">Seminary Hill Retreat</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="amenities.html">Amenities</a>
+        <a href="book.html" class="btn btn-primary">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <h1>Book Your Stay</h1>
+    <p class="lead">Choose your preferred booking platform below and secure your stay at Seminary Hill Retreat.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container booking-options">
+
+    <div class="card">
+      <h2>Book on Airbnb</h2>
+      <p>View availability, pricing, and reviews directly on Airbnb.</p>
+      <a href="#" class="btn btn-primary">Go to Airbnb</a>
+    </div>
+
+    <div class="card">
+      <h2>Book on VRBO</h2>
+      <p>Compare dates and book securely through VRBO.</p>
+      <a href="#" class="btn btn-primary">Go to VRBO</a>
+    </div>
+
+  </div>
+</section>
+<br>
+<section>
+  <div class="container">
+    <div class="card">
+      <h2>Booking Notes</h2>
+      <p>Check-in is simple with self check-in access. The property is non-smoking, with no pets or parties unless pre-approved. Please review full details on your booking platform before confirming.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>Seminary Hill Retreat</strong>
+    </div>
+    <div>
+      <strong>Quick Links</strong>
+      <p class="muted-small"><a href="index.html">Home</a><br><a href="gallery.html">Gallery</a><br><a href="about.html">About</a></p>
+    </div>
+    <div>
+      <strong>Contact</strong>
+      <p>kenkindred@yahoo.com<br>(949) 292-3129</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
