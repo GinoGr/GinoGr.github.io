@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Room Nobody Wanted to Sit In | Seminary Hill Retreat</title>
+  <meta name="description" content="Read the story behind Seminary Hill Retreat's cathedral living room and the work that helped restore comfort, light control, and the full experience of the home." />
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #52606d;
+      --accent: #8b5e3c;
+      --accent-dark: #6f4a2f;
+      --border: #e5e7eb;
+      --max: 1120px;
+      --reading: 760px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .reading-width {
+      width: min(100% - 2rem, var(--reading));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 245, 242, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: var(--accent-dark); }
+
+    .article-hero {
+      padding: 4rem 0 2rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--accent-dark);
+      background: #efe4db;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0 0 1rem;
+    }
+
+    h1 { font-size: clamp(2.2rem, 5vw, 4rem); }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); margin-top: 2.5rem; }
+    p { margin: 0 0 1.25rem; color: var(--muted); font-size: 1.05rem; }
+
+    .article-subtitle {
+      font-size: 1.15rem;
+      max-width: 58ch;
+    }
+
+    .hero-card,
+    .article-card,
+    .cta-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(229, 231, 235, 0.7);
+      overflow: hidden;
+    }
+
+    .hero-image {
+      min-height: 360px;
+      background:
+        linear-gradient(rgba(31, 41, 51, 0.18), rgba(31, 41, 51, 0.28)),
+        url('Data/Gallery/Living Room 3.JPG') center/cover;
+      display: flex;
+      align-items: end;
+      padding: 1.25rem;
+      margin-top: 0;
+    }
+
+    .hero-caption {
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--text);
+      padding: 0.8rem 1rem;
+      border-radius: 14px;
+      font-weight: 700;
+      max-width: 560px;
+    }
+
+    .article-wrap {
+      padding: 1rem 0 4rem;
+    }
+
+    .article-card {
+      padding: 2rem;
+    }
+
+    .article-card p strong {
+      color: var(--text);
+    }
+
+    .pull-quote {
+      margin: 2rem 0;
+      padding: 1.25rem 1.5rem;
+      border-left: 4px solid var(--accent);
+      background: #fbf8f4;
+      border-radius: 0 14px 14px 0;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .image-block {
+      margin: 2rem 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #ddd;
+    }
+
+    .image-block img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+    }
+
+    .image-caption {
+      padding: 0.85rem 1rem;
+      background: #fff;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cta-section {
+      padding: 0 0 4rem;
+    }
+
+    .cta-card {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .cta-card p {
+      max-width: 58ch;
+      margin: 0 auto 1.25rem;
+    }
+
+    .site-footer {
+      padding: 2rem 0 3rem;
+      border-top: 1px solid var(--border);
+      background: #f3efe9;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .muted-small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .nav,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .article-hero {
+        padding-top: 2rem;
+      }
+
+      .hero-image {
+        min-height: 260px;
+      }
+
+      .article-card,
+      .cta-card {
+        padding: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">Seminary Hill Retreat</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="amenities.html">Amenities</a>
+        <a href="book.html" class="btn btn-primary">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="article-hero">
+      <div class="container">
+        <span class="eyebrow">Featured story</span>
+        <h1>The Room Nobody Wanted to Sit In</h1>
+        <p class="article-subtitle">
+          How a heat and glare problem nearly took away the best part of Seminary Hill Retreat — and how the space was brought back to life.
+        </p>
+
+        <div class="hero-card">
+          <div class="hero-image">
+            <div class="hero-caption">The cathedral living room is one of the defining spaces of the home — designed to frame the surrounding landscape and make the view part of the experience.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-wrap">
+      <div class="reading-width">
+        <article class="article-card">
+          <p>
+            At the heart of Seminary Hill Retreat is a dramatic living room lined with soaring glass, warm cedar tones, and wide views over the surrounding countryside. It is the kind of room guests remember — the place where mornings begin slowly and evenings end with the landscape still glowing outside.
+          </p>
+
+          <p>
+            But during part of the renovation and update process, that same showpiece became the least comfortable room in the house. Afternoon sun poured through the glass, heat built up quickly, and glare made the space hard to enjoy. Instead of drawing people in, the room was pushing them away.
+          </p>
+
+          <div class="pull-quote">
+            The room meant to sell the stay had become the room nobody wanted to sit in.
+          </div>
+
+          <h2>What changed</h2>
+          <p>
+            Some of the windows had been replaced, but the original high-performance film that once helped manage heat and glare was no longer on that new glass. The difference was immediate. Areas that had once felt balanced and comfortable suddenly became bright, hot, and difficult to use during the warmest part of the day.
+          </p>
+
+          <p>
+            For a vacation rental, that is more than a design issue. The most memorable room in the house also has to function well. Guests do not just book a property for how it photographs — they book it for how it feels while they are there.
+          </p>
+
+          <h2>The challenge</h2>
+          <p>
+            Matching the original look of the windows was not simple. The film used before was no longer available, so the solution needed to do two things at once: restore comfort and preserve the visual character of the room. A poor match would have stood out immediately across such a large wall of glass.
+          </p>
+
+          <p>
+            The goal was to find a film that kept the appearance cohesive while also reducing glare, managing solar heat, and protecting the guest experience in the living room.
+          </p>
+
+          <div class="image-block">
+            <img src="Data/Gallery/Exterior 7.JPG" alt="Exterior view of Seminary Hill Retreat" />
+            <div class="image-caption">The home’s distinctive cedar architecture and glass-filled design are a major part of what makes the retreat feel special.</div>
+          </div>
+
+          <h2>The result</h2>
+          <p>
+            Once the work was completed, the room felt like itself again. The harsh glare was reduced, heat was brought back under control, and the view returned to being the focus. Most importantly, the living room once again became a place guests actually wanted to spend time in.
+          </p>
+
+          <p>
+            That matters at Seminary Hill Retreat because the home is designed around comfort, privacy, and connection to the outdoors. When the main gathering space works the way it should, the entire experience of the property becomes stronger.
+          </p>
+
+          <h2>Why it matters</h2>
+          <p>
+            Details like this are easy to overlook when browsing photos online, but they shape the stay in real ways. Comfort, light, temperature, and atmosphere all affect whether a room feels inviting. At this home, thoughtful upgrades help protect the quality of the experience guests come for in the first place.
+          </p>
+
+          <p>
+            Seminary Hill Retreat is more than a scenic property. It is a carefully maintained hilltop getaway where the setting, architecture, and guest experience all work together. This story is one small example of the attention that goes into keeping it that way.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="reading-width">
+        <div class="cta-card">
+          <h2>See the retreat for yourself</h2>
+          <p>
+            From the cathedral living room to the peaceful grounds outside, Seminary Hill Retreat was designed to be experienced in person. Explore the gallery, learn more about the property, or head to the booking page to plan your stay.
+          </p>
+          <a href="book.html" class="btn btn-primary">Book Your Stay</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Seminary Hill Retreat</strong>
+      </div>
+      <div>
+        <strong>Quick Links</strong>
+        <p class="muted-small"><a href="about.html">About</a><br><a href="gallery.html">Gallery</a><br><a href="amenities.html">Amenities</a></p>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <p class="muted-small">kenkindred@yahoo.com<br>(949) 292-3129</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
