@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Seminary Hill Retreat</title>
+  <meta name="description" content="Learn more about Seminary Hill Retreat, a private cedar hilltop getaway in Centralia, Washington." />
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #52606d;
+      --accent: #8b5e3c;
+      --accent-dark: #6f4a2f;
+      --border: #e5e7eb;
+      --max: 1120px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 245, 242, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: var(--accent-dark); }
+
+    .hero {
+      padding: 4rem 0 2rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--accent-dark);
+      background: #efe4db;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0 0 1rem;
+    }
+
+    h1 { font-size: clamp(2.2rem, 5vw, 4rem); }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+    p { margin: 0 0 1rem; color: var(--muted); }
+
+    section {
+      padding: 2.2rem 0;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      max-width: 70ch;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(229, 231, 235, 0.7);
+      padding: 1.4rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .rules-list,
+    .highlights-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .rules-list li,
+    .highlights-list li {
+      margin-bottom: 0.45rem;
+    }
+
+    .site-footer {
+      padding: 2rem 0 3rem;
+      border-top: 1px solid var(--border);
+      background: #f3efe9;
+      margin-top: 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .muted-small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .two-col,
+      .grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">Seminary Hill Retreat</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="amenities.html">Amenities</a>
+        <a href="book.html" class="btn btn-primary">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">About the retreat</span>
+        <h1>A peaceful hilltop stay designed for comfort, privacy, and time to unwind.</h1>
+        <p class="lead">
+          Seminary Hill Retreat is a custom-built Lindal cedar home set on five private acres above the countryside near Centralia. Surrounded by old-growth trees, open meadow, orchard paths, and mountain views, it offers a quiet place to slow down, spread out, and enjoy a more scenic pace of life.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container two-col">
+        <div class="card">
+          <h2>The space</h2>
+          <p>
+            Inside, the home feels fresh, warm, and thoughtfully prepared for guests. Furnishings, beds, linens, kitchen equipment, and many of the interior finishes have been updated to create a stay that feels both polished and comfortable. From the coffee and tea setup to the inviting living spaces, every detail is meant to make arrival easy and time here relaxing.
+          </p>
+          <p>
+            The layout is ideal for families or small groups looking for room to gather while still enjoying a quiet, private setting. Large windows, natural surroundings, and easy indoor-outdoor flow help the home feel connected to the landscape.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Quick highlights</h2>
+          <ul class="highlights-list">
+            <li>Private 5-acre hilltop property</li>
+            <li>Custom Lindal cedar home</li>
+            <li>Forest, meadow, orchard, and mountain views</li>
+            <li>Brand-new furnishings and essentials</li>
+            <li>Spacious deck and outdoor areas</li>
+            <li>Coffee and tea bar</li>
+            <li>Fast Wi-Fi and smart TV</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container grid">
+        <div class="card feature-card">
+          <h3>Guest access</h3>
+          <p>
+            Guests have access to the entire home and surrounding property, including the deck, meadow, and orchard areas. It is a stay that gives you space to settle in and explore at your own pace.
+          </p>
+        </div>
+
+        <div class="card feature-card">
+          <h3>Comfort and amenities</h3>
+          <p>
+            Expect a fully equipped kitchen, washer and dryer, central air, fireplace, smart TV, Wi-Fi, outdoor seating, and thoughtful touches that support both short visits and longer stays.
+          </p>
+        </div>
+
+        <div class="card feature-card">
+          <h3>Setting</h3>
+          <p>
+            The retreat feels private and tucked away, yet it is still close enough to enjoy the charm of Centralia, with its shops, dining, antiquing, and nearby attractions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container two-col">
+        <div class="card">
+          <h2>What makes it special</h2>
+          <p>
+            One of the standout parts of staying here is the setting itself. The drive in winds through scenic countryside and towering evergreens before opening to a quiet hilltop retreat. Guests can sip coffee on the deck, watch wildlife in the meadow, stroll past fruit trees, and enjoy the sense of being away from the rush of everyday life.
+          </p>
+          <p>
+            The home also balances that peaceful setting with practical convenience, offering generous parking, self check-in, and a smooth departure process that keeps the stay simple from arrival to checkout.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Good to know</h2>
+          <ul class="rules-list">
+            <li>Non-smoking property</li>
+            <li>No vaping on the premises</li>
+            <li>No pets</li>
+            <li>No parties without prior approval</li>
+            <li>Self check-in with smart lock</li>
+            <li>Outdoor security features are in place for guest safety</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Seminary Hill Retreat</strong>
+      </div>
+      <div>
+        <strong>Quick Links</strong>
+        <p class="muted-small"><a href="index.html">Home</a><br><a href="gallery.html">Gallery</a><br><a href="about.html">About</a></p>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <p class="muted-small">kenkindred@yahoo.com<br>(949) 292-3129</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
