@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amenities | Seminary Hill Retreat</title>
+  <meta name="description" content="Explore the amenities at Seminary Hill Retreat, from the fully equipped kitchen and fireplace to fast Wi-Fi, outdoor spaces, and family-friendly comforts." />
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #52606d;
+      --accent: #8b5e3c;
+      --accent-dark: #6f4a2f;
+      --border: #e5e7eb;
+      --max: 1120px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 245, 242, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: var(--accent-dark); }
+
+    .hero {
+      padding: 4rem 0 2rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--accent-dark);
+      background: #efe4db;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0 0 1rem;
+    }
+
+    h1 { font-size: clamp(2.2rem, 5vw, 4rem); }
+    h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+    h3 { font-size: 1.05rem; }
+    p { margin: 0 0 1rem; color: var(--muted); }
+
+    .lead {
+      font-size: 1.08rem;
+      max-width: 68ch;
+    }
+
+    section {
+      padding: 2.2rem 0;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(229, 231, 235, 0.7);
+      padding: 1.4rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .amenity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .amenity-card p,
+    .note-list,
+    .highlight-list {
+      color: var(--muted);
+    }
+
+    .note-list,
+    .highlight-list {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    .note-list li,
+    .highlight-list li {
+      margin-bottom: 0.45rem;
+    }
+
+    .site-footer {
+      padding: 2rem 0 3rem;
+      border-top: 1px solid var(--border);
+      background: #f3efe9;
+      margin-top: 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .muted-small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .two-col,
+      .amenity-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">Seminary Hill Retreat</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="amenities.html">Amenities</a>
+        <a href="book.html" class="btn btn-primary">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Amenities</span>
+        <h1>Thoughtful comforts for a relaxing, easy stay.</h1>
+        <p class="lead">
+          Seminary Hill Retreat is equipped to make guests feel at home from the moment they arrive, with updated interiors, practical conveniences, outdoor gathering spaces, and the small details that make a getaway feel effortless.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container two-col">
+        <div class="card">
+          <h2>At a glance</h2>
+          <p>
+            Inside the home, guests can enjoy a fully equipped kitchen, high-speed Wi-Fi, smart TV streaming, central air, a pellet stove fireplace, laundry, and comfortable furnishings throughout. Outside, the property offers a spacious deck, backyard space, outdoor seating, dining areas, and a fire pit to take in the peaceful hilltop setting.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Highlights</h2>
+          <ul class="highlight-list">
+            <li>Fast Wi-Fi and smart TV</li>
+            <li>Fully equipped kitchen</li>
+            <li>Washer and dryer</li>
+            <li>Central air conditioning and heating</li>
+            <li>Fireplace and outdoor fire pit</li>
+            <li>Spacious deck and outdoor seating</li>
+            <li>Garage parking and self check-in</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container amenity-grid">
+        <div class="card amenity-card">
+          <h3>Kitchen & dining</h3>
+          <p>Full kitchen with modern appliances, cooking essentials, coffee and tea setup, dining table, dishwasher, microwave, toaster, blender, kettle, and more.</p>
+        </div>
+
+        <div class="card amenity-card">
+          <h3>Living & entertainment</h3>
+          <p>Large smart TV with streaming access, piano, books, reading material, and comfortable gathering spaces for relaxing together.</p>
+        </div>
+
+        <div class="card amenity-card">
+          <h3>Bedrooms & laundry</h3>
+          <p>Quality linens, extra pillows and blankets, room-darkening shades, hangers, clothing storage, and an in-home washer and dryer.</p>
+        </div>
+
+        <div class="card amenity-card">
+          <h3>Heating & cooling</h3>
+          <p>Central air conditioning, ceiling fans, heating, and a pellet stove fireplace help keep the home comfortable in every season.</p>
+        </div>
+
+        <div class="card amenity-card">
+          <h3>Outdoor spaces</h3>
+          <p>Private entrance, deck, backyard, outdoor dining area, lounge seating, and a fire pit for taking in the surrounding views and fresh air.</p>
+        </div>
+
+        <div class="card amenity-card">
+          <h3>Parking & convenience</h3>
+          <p>Two garage spaces, additional onsite parking, smart-lock self check-in, and a single-level layout with no interior stairs.</p>
+        </div>
+
+        <div class="card amenity-card">
+          <h3>Family-friendly touches</h3>
+          <p>Children’s dinnerware, games, books, and practical spaces that make the home comfortable for family stays.</p>
+        </div>
+
+        <div class="card amenity-card">
+          <h3>Safety features</h3>
+          <p>Smoke and carbon monoxide alarms, exterior lighting, fire extinguisher, first aid kit, and outdoor monitoring features for added peace of mind.</p>
+        </div>
+
+        <div class="card amenity-card">
+          <h3>Guest extras</h3>
+          <p>Complimentary coffee and tea, essentials like towels and toiletries, and optional cleaning during longer stays.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container two-col">
+        <div class="card">
+          <h2>Designed for comfort</h2>
+          <p>
+            The amenities here are meant to support both restful weekends and longer stays. Whether guests are cooking a meal, streaming a movie, enjoying a quiet morning coffee outside, or settling in after a day exploring Centralia and the surrounding area, the home is set up to feel simple, warm, and easy to enjoy.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Good to know</h2>
+          <ul class="note-list">
+            <li>Non-smoking property</li>
+            <li>No pets</li>
+            <li>No parties without prior approval</li>
+            <li>Self check-in with smart lock</li>
+            <li>Outdoor security features are in place</li>
+            <li>Ample onsite parking is available</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Seminary Hill Retreat</strong>
+      </div>
+      <div>
+        <strong>Quick Links</strong>
+        <p class="muted-small"><a href="index.html">Home</a><br><a href="gallery.html">Gallery</a><br><a href="about.html">About</a></p>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <p class="muted-small">kenkindred@yahoo.com<br>(949) 292-3129</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
