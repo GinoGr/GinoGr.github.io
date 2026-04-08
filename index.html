@@ -659,6 +659,64 @@
         grid-auto-columns: minmax(85%, 85%);
       }
     }
+
+    a.external-link {
+      color: var(--accent);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    a.external-link:hover {
+      color: var(--accent-dark);
+    }
+
+    a.external-link::after {
+      content: " ↗";
+      font-size: 0.9em;
+    }
+
+    .coming-soon {
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .coming-soon h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .coming-soon .subtitle {
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .coming-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .coming-item {
+      background: var(--surface);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      font-weight: 600;
+    }
+
+    .coming-item span {
+      display: block;
+      font-weight: normal;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .coming-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -754,6 +812,46 @@
       </div>
     </section>
 
+    <section id="location">
+      <div class="container split">
+        <div>
+          <h2>Location & Area</h2>
+          <p>
+            Enjoy a scenic drive along a quiet country road lined with old-growth forest, towering Douglas fir, and cedar trees as you arrive at this peaceful hilltop retreat. Just minutes away, the charming town of Centralia offers a unique blend of history, small-town character, and local attractions.
+          </p>
+          
+          <p>
+            Founded by George Washington, one of the first Black pioneers in Washington State, Centralia has a rich and distinctive history that still shapes the town today. Visitors can explore its historic downtown, filled with antique shops, local dining, and classic architecture.
+          </p>
+          
+          <p>
+            Nearby, the Seminary Hill Natural Area offers miles of forested trails, scenic viewpoints, and a quiet escape into nature—perfect for hiking, birdwatching, and taking in the beauty of the Pacific Northwest.
+          </p>
+          
+          <p>
+            Learn more about the town at 
+            <a href="https://www.cityofcentralia.com" target="_blank" class="external-link">
+              Centralia’s official website
+            </a>.
+          </p>
+        </div>
+        <div class="card amenity">
+          <h3>Things to do nearby</h3>
+          <p>Explore a mix of outdoor adventure, history, and local charm just minutes from the property.</p>
+                  
+          <ul class="list">
+            <li>Seminary Hill Natural Area (trails & scenic views)</li>
+            <li>Historic Downtown Centralia (shops & antiquing)</li>
+            <li>Centralia's is known for their unique antique shops</li>
+            <li>Restaurants, cafés, and local dining</li>
+            <li>Museums and historic landmarks</li>
+            <li>Golf courses and outdoor recreation</li>
+            <li>Wildlife viewing and birdwatching</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section id="amenities">
       <div class="container">
         <div class="section-heading">
@@ -770,33 +868,8 @@
           <div class="card amenity"><h3>Garage parking</h3><p>Convenient and accessible parking for guests.</p></div>
           <div class="card amenity"><h3>Washer and dryer</h3><p>Especially useful for longer bookings and families.</p></div>
           <div class="card amenity"><h3>Fireplace</h3><p>Cozy and inviting, perfect for chilly evenings.</p></div>
-          <div class="card amenity"><h3>Air conditioning</h3><p>Keep cool and comfortable during hot summer days.</p></div>
+          <div class="card amenity"><h3>Premium Linens</h3><p>Hotel-quality sheets, bedding, and towels for a comfortable stay.</p></div>
           <div class="card amenity"><h3>Piano</h3><p>Enjoy some musical entertainment during your stay.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="location">
-      <div class="container split">
-        <div>
-          <h2>Location</h2>
-          <p>
-            Enjoy a gorgeous drive along a scenic country road through old-growth
-            forest and towering Douglas fir and cedar trees, leading to a hilltop retreat with beautiful views,
-            just minutes from charming Centralia's shops, dining, and local attractions.
-          </p>
-        </div>
-        <div class="card amenity">
-          <h3>Things to do nearby</h3>
-          <p>Pull ideas from the blog post, Airbnb guide, or local recommendations.</p>
-          <ul class="list">
-            <li>Zoo</li>
-            <li>Museums</li>
-            <li>Theme Parks and Water Parks</li>
-            <li>Golf</li>
-            <li>Casinos</li>
-            <li>Bird Watching</li>
-          </ul>
         </div>
       </div>
     </section>
@@ -819,6 +892,30 @@
         <div class="reviews-shell">
           <div class="reviews-track" id="reviewsTrack" aria-live="polite">
             <div class="card review-card reviews-loading">Loading guest reviews...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="coming-soon">
+      <div class="container">
+        <h2>Coming Soon</h2>
+        <p class="subtitle">We’re continuing to expand the experience at Seminary Hill Retreat.</p>
+      
+        <div class="coming-grid">
+          <div class="coming-item">
+            Game Room  
+            <span>Ping pong, darts, pool</span>
+          </div>
+        
+          <div class="coming-item">
+            Outdoor Upgrades  
+            <span>Jacuzzi, fire pit, and more</span>
+          </div>
+        
+          <div class="coming-item">
+            Event Space  
+            <span>Weddings, receptions, and gatherings in the barn</span>
           </div>
         </div>
       </div>
@@ -980,7 +1077,7 @@
       </div>
       <div>
         <strong>Contact</strong><br>
-        <a href="/cdn-cgi/l/email-protection#38535d565351565c4a5d5c784159505757165b5755"><span class="__cf_email__" data-cfemail="1d767873767473796f78795d647c757272337e7270">[email&#160;protected]</span></a> <br>
+        <a href="mailto:kenkindred@yahoo.com">kenkindred@yahoo.com</a><br>
         <a href="tel:+19492923129">(949) 292-3129</a>
       </div>
     </div>
