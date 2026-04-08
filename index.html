@@ -130,7 +130,6 @@
       display: block;
     }
 
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -239,7 +238,6 @@
     .stats-grid,
     .amenities-grid,
     .gallery-grid,
-    .reviews-grid,
     .faq-grid,
     .footer-grid {
       display: grid;
@@ -278,13 +276,11 @@
     }
 
     .amenity,
-    .review,
     .faq-item {
       padding: 1.25rem;
     }
 
     .amenity h3,
-    .review h3,
     .faq-item h3 {
       font-size: 1.05rem;
       margin-bottom: 0.5rem;
@@ -303,9 +299,152 @@
       color: var(--muted);
     }
 
-    .reviews-grid,
     .faq-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reviews-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .reviews-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .review-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 0.8rem;
+      border-radius: 999px;
+      background: #efe4db;
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .reviews-shell {
+      position: relative;
+    }
+
+    .reviews-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(280px, 360px);
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      padding: 0.25rem 0.1rem 0.75rem;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .reviews-track::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .reviews-track::-webkit-scrollbar-thumb {
+      background: #d8ccc1;
+      border-radius: 999px;
+    }
+
+    .review-card {
+      scroll-snap-align: start;
+      padding: 1.25rem;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .review-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .review-card h3 {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .review-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .platform-badge,
+    .rating-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .platform-badge {
+      background: #f3efe9;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .rating-badge {
+      background: #efe4db;
+      color: var(--accent-dark);
+    }
+
+    .review-text {
+      flex: 1;
+    }
+
+    .review-author {
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.15rem;
+    }
+
+    .reviews-controls {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+
+    .scroll-btn {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 1.1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .scroll-btn:hover {
+      background: #f3efe9;
+    }
+
+    .reviews-empty,
+    .reviews-loading {
+      padding: 1rem 0;
+      color: var(--muted);
     }
 
     .cta {
@@ -340,7 +479,6 @@
       .stats-grid,
       .amenities-grid,
       .gallery-grid,
-      .reviews-grid,
       .faq-grid {
         grid-template-columns: 1fr;
       }
@@ -349,8 +487,22 @@
         min-height: 300px;
       }
     }
+    .review-toggle {
+    margin-top: 0.25rem;
+    padding: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 
-        @media (max-width: 768px) {
+  .review-toggle:hover {
+    text-decoration: underline;
+  }
+
+    @media (max-width: 768px) {
       .container,
       .reading-width {
         width: min(100% - 1.25rem, var(--max));
@@ -381,6 +533,10 @@
       .btn {
         padding: 0.62rem 0.9rem;
         font-size: 0.95rem;
+      }
+
+      .reviews-track {
+        grid-auto-columns: minmax(85%, 85%);
       }
     }
   </style>
@@ -421,9 +577,9 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">Cozy nature escape</span>
-          <h1>Beautiful, custom built, hilltop, country retreat   .</h1>
+          <h1>Beautiful, custom built, hilltop, country retreat.</h1>
           <p>
-            Escape to a secluded 5-acre hilltop sanctuary with forest, 
+            Escape to a secluded 5-acre hilltop sanctuary with forest,
             orchard, and mountain views in a beautifully crafted cedar home.
           </p>
           <div class="hero-actions">
@@ -461,7 +617,7 @@
           <p>
             A private, custom-built cedar home set on 5 peaceful acres, Seminary Hill Retreat offers a quiet hilltop
             escape surrounded by forest, open meadow, and beautiful mountain views.
-            Guests can enjoy modern, brand-new interiors, first-class amenities, and the freedom to 
+            Guests can enjoy modern, brand-new interiors, first-class amenities, and the freedom to
             explore the orchard and scenic grounds while relaxing far from the noise of city life.
           </p>
         </div>
@@ -494,7 +650,7 @@
           <div class="card amenity"><h3>Garage parking</h3><p>Convenient and accessible parking for guests.</p></div>
           <div class="card amenity"><h3>Washer and dryer</h3><p>Especially useful for longer bookings and families.</p></div>
           <div class="card amenity"><h3>Fireplace</h3><p>Cozy and inviting, perfect for chilly evenings.</p></div>
-          <div class ="card amenity"><h3>Air conditioning</h3><p>Keep cool and comfortable during hot summer days.</p></div>
+          <div class="card amenity"><h3>Air conditioning</h3><p>Keep cool and comfortable during hot summer days.</p></div>
           <div class="card amenity"><h3>Piano</h3><p>Enjoy some musical entertainment during your stay.</p></div>
         </div>
       </div>
@@ -505,9 +661,9 @@
         <div>
           <h2>Location</h2>
           <p>
-            Enjoy a gorgeous drive along a scenic country road through old-growth 
-            forest and towering Douglas fir and cedar trees, leading to a hilltop retreat with beautiful views, 
-            just minutes from charming Centralia’s shops, dining, and local attractions.
+            Enjoy a gorgeous drive along a scenic country road through old-growth
+            forest and towering Douglas fir and cedar trees, leading to a hilltop retreat with beautiful views,
+            just minutes from charming Centralia's shops, dining, and local attractions.
           </p>
         </div>
         <div class="card amenity">
@@ -527,29 +683,22 @@
 
     <section id="reviews">
       <div class="container">
-        <div class="section-heading">
+        <div class="reviews-header">
           <div>
             <h2>Guest reviews</h2>
+            <div class="reviews-summary" id="reviewsSummary">
+              <span class="review-pill">Loading reviews...</span>
+            </div>
+          </div>
+          <div class="reviews-controls" aria-label="Review carousel controls">
+            <button class="scroll-btn" type="button" id="reviewsPrev" aria-label="Scroll reviews left">←</button>
+            <button class="scroll-btn" type="button" id="reviewsNext" aria-label="Scroll reviews right">→</button>
           </div>
         </div>
-        <div class="reviews-grid">
-          <div class="card review">
-            <h3>“What an amazing stay!!”</h3>
-            <p>A bit out in the country, yet still very close and to Centralia. The 
-              home was absolutely beautiful and could not have asked for more thoughtful hosts. The 
-              beds and bedding were very comfortable. The kitchen was well stocked and even had 
-              drinks and goodies waiting for us when we arrived. The property was absolutely 
-              gorgeous and we enjoyed sitting on the back deck watching the deer in the evening. Ken 
-              was very responsive with any questions we had. The next time we visit the area, we hope to stay again. 100% recommend</p>
-            <p class="muted-small">— Meghan</p>
-          </div>
-          <div class="card review">
-            <h3>“10.10 Excellent”</h3>
-            <p>All aspects of our stay were absolutely perfect and seamless. The property 
-              is stunning, and the hosts were more than accommodating of what we 
-              needed for our stay. The whole place was clean, comfortable, and 
-              welcoming. Would most definitely stay here again!</p>
-            <p class="muted-small">— Samantha B.</p>
+
+        <div class="reviews-shell">
+          <div class="reviews-track" id="reviewsTrack" aria-live="polite">
+            <div class="card review-card reviews-loading">Loading guest reviews...</div>
           </div>
         </div>
       </div>
@@ -566,7 +715,7 @@
           <div class="card faq-item"><h3>What time is check-in?</h3><p>Check-in is after 3 PM and check-out is by 11 AM.</p></div>
           <div class="card faq-item"><h3>Are pets allowed?</h3><p>Pets are not allowed.</p></div>
           <div class="card faq-item"><h3>Is there parking?</h3><p>Yes, there is free on-site parking in the garage and huge gravel driveway.</p></div>
-          <div class="card faq-item"><h3>How do I book?</h3><p>Use the booking button below book on Airbnb or VRBO</p></div>
+          <div class="card faq-item"><h3>How do I book?</h3><p>Use the booking button below book on Airbnb or VRBO.</p></div>
         </div>
       </div>
     </section>
@@ -575,8 +724,10 @@
       <div class="container">
         <div class="card cta-box">
           <h2>Ready to book your stay?</h2>
-          <a class="btn btn-primary" href="https://www.airbnb.com/rooms/712580363415991341?unique_share_id=cea7632b-3715-42ad-8a82-214b579a211a&viralityEntryPoint=1&s=76&source_impression_id=p3_1775438165_P3xb1OaTNx8cx5vQ&scroll_to_review=1652388384560394035" target="_blank" rel="noopener noreferrer">Book on Airbnb</a>
-          <a class="btn btn-primary" href="https://www.vrbo.com/3510211?regionId=7332&rm1=a1&expediaPropertyId=96095680&brandcid=VRBO.OWNED.BRANCH.DEFAULT.APP-SHARELINK&custom_web_attribute=64d93265-a77b-4d64-bb27-ed380e77d577&source_caller=api&pid=BRAND&shortlink=dnc2q0lt&af_adset=VRBO&af_ad=BRAND.VRBO.OWNED.BRANCH.DEFAULT.APP-SHARELINK&deep_link_value=https%3A%2F%2Fwww.vrbo.com%2F3510211%3FregionId%3D7332%26rm1%3Da1%26expediaPropertyId%3D96095680&af_siteid=9001001&af_sub_siteid=APPHISSHARELINK-IOS-V0&c=APPHISSHARELINK-IOS-V0" target="_blank" rel="noopener noreferrer">Book on VRBO</a>
+          <div class="hero-actions" style="justify-content:center; margin-top: 1rem;">
+            <a class="btn btn-primary" href="https://www.airbnb.com/rooms/712580363415991341?unique_share_id=cea7632b-3715-42ad-8a82-214b579a211a&viralityEntryPoint=1&s=76&source_impression_id=p3_1775438165_P3xb1OaTNx8cx5vQ&scroll_to_review=1652388384560394035" target="_blank" rel="noopener noreferrer">Book on Airbnb</a>
+            <a class="btn btn-primary" href="https://www.vrbo.com/3510211?regionId=7332&rm1=a1&expediaPropertyId=96095680&brandcid=VRBO.OWNED.BRANCH.DEFAULT.APP-SHARELINK&custom_web_attribute=64d93265-a77b-4d64-bb27-ed380e77d577&source_caller=api&pid=BRAND&shortlink=dnc2q0lt&af_adset=VRBO&af_ad=BRAND.VRBO.OWNED.BRANCH.DEFAULT.APP-SHARELINK&deep_link_value=https%3A%2F%2Fwww.vrbo.com%2F3510211%3FregionId%3D7332%26rm1%3Da1%26expediaPropertyId%3D96095680&af_siteid=9001001&af_sub_siteid=APPHISSHARELINK-IOS-V0&c=APPHISSHARELINK-IOS-V0" target="_blank" rel="noopener noreferrer">Book on VRBO</a>
+          </div>
         </div>
       </div>
     </section>
@@ -597,6 +748,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="script_dynamic.js"></script>
   <script src="script.js"></script>
 </body>
-</html>
+</html>  
