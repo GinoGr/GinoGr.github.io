@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Room Nobody Wanted to Sit In | Seminary Hill Retreat</title>
-  <meta name="description" content="Read the story behind Seminary Hill Retreat's cathedral living room and the work that helped restore comfort, light control, and the full experience of the home." />
+  <title>Amenities | Seminary Hill Retreat</title>
+  <meta name="description" content="Explore the amenities at Seminary Hill Retreat, from the fully equipped kitchen and fireplace to fast Wi-Fi, outdoor spaces, and family-friendly comforts." />
   <style>
     :root {
       --bg: #f7f5f2;
@@ -15,7 +15,6 @@
       --accent-dark: #6f4a2f;
       --border: #e5e7eb;
       --max: 1120px;
-      --reading: 760px;
       --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       --radius: 18px;
     }
@@ -27,19 +26,13 @@
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background: var(--bg);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
 
     .container {
       width: min(100% - 2rem, var(--max));
-      margin: 0 auto;
-    }
-
-    .reading-width {
-      width: min(100% - 2rem, var(--reading));
       margin: 0 auto;
     }
 
@@ -83,6 +76,60 @@
       display: none;
     }
 
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.28rem;
+      width: 2.9rem;
+      height: 2.9rem;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .menu-toggle span {
+      width: 1.1rem;
+      height: 2px;
+      background: var(--text);
+      border-radius: 999px;
+      margin: 0 auto;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .menu-toggle.is-open span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.is-open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.is-open span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+      border-top: 1px solid rgba(229, 231, 235, 0.8);
+      background: rgba(247, 245, 242, 0.98);
+    }
+
+    .mobile-menu-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 0.85rem 0 1rem;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -115,7 +162,7 @@
       color: white;
     }
 
-    .article-hero {
+    .hero {
       padding: 4rem 0 2rem;
     }
 
@@ -135,105 +182,62 @@
     }
 
     h1 { font-size: clamp(2.2rem, 5vw, 4rem); }
-    h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); margin-top: 2.5rem; }
-    p { margin: 0 0 1.25rem; color: var(--muted); font-size: 1.05rem; }
+    h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+    h3 { font-size: 1.05rem; }
+    p { margin: 0 0 1rem; color: var(--muted); }
 
-    .article-subtitle {
-      font-size: 1.15rem;
-      max-width: 58ch;
+    .lead {
+      font-size: 1.08rem;
+      max-width: 68ch;
     }
 
-    .hero-card,
-    .article-card,
-    .cta-card {
+    section {
+      padding: 2.2rem 0;
+    }
+
+    .card {
       background: var(--surface);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       border: 1px solid rgba(229, 231, 235, 0.7);
-      overflow: hidden;
+      padding: 1.4rem;
     }
 
-    .hero-image {
-      min-height: 360px;
-      background:
-        linear-gradient(rgba(31, 41, 51, 0.18), rgba(31, 41, 51, 0.28)),
-        url('Data/Gallery/Living Room 3.JPG') center/cover;
-      display: flex;
-      align-items: end;
-      padding: 1.25rem;
-      margin-top: 0;
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.5rem;
+      align-items: start;
     }
 
-    .hero-caption {
-      background: rgba(255, 255, 255, 0.8);
-      color: var(--text);
-      padding: 0.8rem 1rem;
-      border-radius: 14px;
-      font-weight: 700;
-      max-width: 560px;
+    .amenity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
     }
 
-    .article-wrap {
-      padding: 1rem 0 4rem;
-    }
-
-    .article-card {
-      padding: 2rem;
-    }
-
-    .article-card p strong {
-      color: var(--text);
-    }
-
-    .pull-quote {
-      margin: 2rem 0;
-      padding: 1.25rem 1.5rem;
-      border-left: 4px solid var(--accent);
-      background: #fbf8f4;
-      border-radius: 0 14px 14px 0;
-      font-size: 1.05rem;
-      color: var(--text);
-    }
-
-    .image-block {
-      margin: 2rem 0;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      background: #ddd;
-    }
-
-    .image-block img {
-      width: 100%;
-      max-height: 520px;
-      object-fit: cover;
-    }
-
-    .image-caption {
-      padding: 0.85rem 1rem;
-      background: #fff;
+    .amenity-card p,
+    .note-list,
+    .highlight-list {
       color: var(--muted);
-      font-size: 0.95rem;
     }
 
-    .cta-section {
-      padding: 0 0 4rem;
+    .note-list,
+    .highlight-list {
+      margin: 0;
+      padding-left: 1.1rem;
     }
 
-    .cta-card {
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .cta-card p {
-      max-width: 58ch;
-      margin: 0 auto 1.25rem;
+    .note-list li,
+    .highlight-list li {
+      margin-bottom: 0.45rem;
     }
 
     .site-footer {
       padding: 2rem 0 3rem;
       border-top: 1px solid var(--border);
       background: #f3efe9;
+      margin-top: 2rem;
     }
 
     .footer-grid {
@@ -249,21 +253,14 @@
     }
 
     @media (max-width: 900px) {
+      .two-col,
+      .amenity-grid,
       .footer-grid {
         grid-template-columns: 1fr;
       }
 
-      .article-hero {
+      .hero {
         padding-top: 2rem;
-      }
-
-      .hero-image {
-        min-height: 260px;
-      }
-
-      .article-card,
-      .cta-card {
-        padding: 1.4rem;
       }
     }
 
@@ -274,9 +271,8 @@
       }
 
       .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.7rem;
+        align-items: center;
+        gap: 0.75rem;
         padding: 0.65rem 0;
       }
 
@@ -284,10 +280,16 @@
         font-size: 0.98rem;
       }
 
-      .nav-links {
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .mobile-menu .btn {
         width: 100%;
-        gap: 0.5rem;
-        padding-bottom: 0.25rem;
       }
 
       .btn {
@@ -302,7 +304,14 @@
   <header class="site-header">
     <div class="container nav">
       <a href="index.html" class="brand">Seminary Hill Retreat</a>
-      <nav class="nav-links">
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links desktop-nav" aria-label="Primary navigation">
         <a href="index.html" class="btn btn-secondary">Home</a>
         <a href="gallery.html" class="btn btn-secondary">Gallery</a>
         <a href="about.html" class="btn btn-secondary">About</a>
@@ -310,92 +319,121 @@
         <a href="book.html" class="btn btn-primary">Book Now</a>
       </nav>
     </div>
+
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+      <div class="container mobile-menu-inner">
+        <a href="index.html" class="btn btn-secondary">Home</a>
+        <a href="gallery.html" class="btn btn-secondary">Gallery</a>
+        <a href="about.html" class="btn btn-secondary">About</a>
+        <a href="amenities.html" class="btn btn-secondary">Amenities</a>
+        <a href="book.html" class="btn btn-primary">Book Now</a>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <section class="article-hero">
+    <section class="hero">
       <div class="container">
-        <span class="eyebrow">Featured story</span>
-        <h1>The Room Nobody Wanted to Sit In</h1>
-        <p class="article-subtitle">
-          How a heat and glare problem nearly took away the best part of Seminary Hill Retreat — and how the space was brought back to life.
+        <span class="eyebrow">Amenities</span>
+        <h1>Thoughtful comforts for a relaxing, easy stay.</h1>
+        <p class="lead">
+          Seminary Hill Retreat is equipped to make guests feel at home from the moment they arrive, with updated interiors, practical conveniences, outdoor gathering spaces, and the small details that make a getaway feel effortless.
         </p>
+      </div>
+    </section>
 
-        <div class="hero-card">
-          <div class="hero-image">
-            <div class="hero-caption">The cathedral living room is one of the defining spaces of the home — designed to frame the surrounding landscape and make the view part of the experience.</div>
-          </div>
+    <section>
+      <div class="container two-col">
+        <div class="card">
+          <h2>At a glance</h2>
+          <p>
+            Inside the home, guests can enjoy a fully equipped kitchen, high-speed Wi-Fi, smart TV streaming, central air, a pellet stove fireplace, laundry, and comfortable furnishings throughout. Outside, the property offers a spacious deck, backyard space, outdoor seating, dining areas, and a fire pit to take in the peaceful hilltop setting.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Highlights</h2>
+          <ul class="highlight-list">
+            <li>Fast Wi-Fi and smart TV</li>
+            <li>Fully equipped kitchen</li>
+            <li>Washer and dryer</li>
+            <li>Central air conditioning and heating</li>
+            <li>Fireplace and outdoor fire pit</li>
+            <li>Spacious deck and outdoor seating</li>
+            <li>Garage parking and self check-in</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="article-wrap">
-      <div class="reading-width">
-        <article class="article-card">
-          <p>
-            At the heart of Seminary Hill Retreat is a dramatic living room lined with soaring glass, warm cedar tones, and wide views over the surrounding countryside. It is the kind of room guests remember — the place where mornings begin slowly and evenings end with the landscape still glowing outside.
-          </p>
+    <section>
+      <div class="container amenity-grid">
+        <div class="card amenity-card">
+          <h3>Kitchen & dining</h3>
+          <p>Full kitchen with modern appliances, cooking essentials, coffee and tea setup, dining table, dishwasher, microwave, toaster, blender, kettle, and more.</p>
+        </div>
 
-          <p>
-            But during part of the renovation and update process, that same showpiece became the least comfortable room in the house. Afternoon sun poured through the glass, heat built up quickly, and glare made the space hard to enjoy. Instead of drawing people in, the room was pushing them away.
-          </p>
+        <div class="card amenity-card">
+          <h3>Living & entertainment</h3>
+          <p>Large smart TV with streaming access, piano, books, reading material, and comfortable gathering spaces for relaxing together.</p>
+        </div>
 
-          <div class="pull-quote">
-            The room meant to sell the stay had become the room nobody wanted to sit in.
-          </div>
+        <div class="card amenity-card">
+          <h3>Bedrooms & laundry</h3>
+          <p>Quality linens, extra pillows and blankets, room-darkening shades, hangers, clothing storage, and an in-home washer and dryer.</p>
+        </div>
 
-          <h2>What changed</h2>
-          <p>
-            Some of the windows had been replaced, but the original high-performance film that once helped manage heat and glare was no longer on that new glass. The difference was immediate. Areas that had once felt balanced and comfortable suddenly became bright, hot, and difficult to use during the warmest part of the day.
-          </p>
+        <div class="card amenity-card">
+          <h3>Heating & cooling</h3>
+          <p>Central air conditioning, ceiling fans, heating, and a pellet stove fireplace help keep the home comfortable in every season.</p>
+        </div>
 
-          <p>
-            For a vacation rental, that is more than a design issue. The most memorable room in the house also has to function well. Guests do not just book a property for how it photographs — they book it for how it feels while they are there.
-          </p>
+        <div class="card amenity-card">
+          <h3>Outdoor spaces</h3>
+          <p>Private entrance, deck, backyard, outdoor dining area, lounge seating, and a fire pit for taking in the surrounding views and fresh air.</p>
+        </div>
 
-          <h2>The challenge</h2>
-          <p>
-            Matching the original look of the windows was not simple. The film used before was no longer available, so the solution needed to do two things at once: restore comfort and preserve the visual character of the room. A poor match would have stood out immediately across such a large wall of glass.
-          </p>
+        <div class="card amenity-card">
+          <h3>Parking & convenience</h3>
+          <p>Two garage spaces, additional onsite parking, smart-lock self check-in, and a single-level layout with no interior stairs.</p>
+        </div>
 
-          <p>
-            The goal was to find a film that kept the appearance cohesive while also reducing glare, managing solar heat, and protecting the guest experience in the living room.
-          </p>
+        <div class="card amenity-card">
+          <h3>Family-friendly touches</h3>
+          <p>Children’s dinnerware, games, books, and practical spaces that make the home comfortable for family stays.</p>
+        </div>
 
-          <div class="image-block">
-            <img src="Data/Gallery/Exterior 7.JPG" alt="Exterior view of Seminary Hill Retreat" />
-            <div class="image-caption">The home’s distinctive cedar architecture and glass-filled design are a major part of what makes the retreat feel special.</div>
-          </div>
+        <div class="card amenity-card">
+          <h3>Safety features</h3>
+          <p>Smoke and carbon monoxide alarms, exterior lighting, fire extinguisher, first aid kit, and outdoor monitoring features for added peace of mind.</p>
+        </div>
 
-          <h2>The result</h2>
-          <p>
-            Once the work was completed, the room felt like itself again. The harsh glare was reduced, heat was brought back under control, and the view returned to being the focus. Most importantly, the living room once again became a place guests actually wanted to spend time in.
-          </p>
-
-          <p>
-            That matters at Seminary Hill Retreat because the home is designed around comfort, privacy, and connection to the outdoors. When the main gathering space works the way it should, the entire experience of the property becomes stronger.
-          </p>
-
-          <h2>Why it matters</h2>
-          <p>
-            Details like this are easy to overlook when browsing photos online, but they shape the stay in real ways. Comfort, light, temperature, and atmosphere all affect whether a room feels inviting. At this home, thoughtful upgrades help protect the quality of the experience guests come for in the first place.
-          </p>
-
-          <p>
-            Seminary Hill Retreat is more than a scenic property. It is a carefully maintained hilltop getaway where the setting, architecture, and guest experience all work together. This story is one small example of the attention that goes into keeping it that way.
-          </p>
-        </article>
+        <div class="card amenity-card">
+          <h3>Guest extras</h3>
+          <p>Complimentary coffee and tea, essentials like towels and toiletries, and optional cleaning during longer stays.</p>
+        </div>
       </div>
     </section>
 
-    <section class="cta-section">
-      <div class="reading-width">
-        <div class="cta-card">
-          <h2>See the retreat for yourself</h2>
+    <section>
+      <div class="container two-col">
+        <div class="card">
+          <h2>Designed for comfort</h2>
           <p>
-            From the cathedral living room to the peaceful grounds outside, Seminary Hill Retreat was designed to be experienced in person. Explore the gallery, learn more about the property, or head to the booking page to plan your stay.
+            The amenities here are meant to support both restful weekends and longer stays. Whether guests are cooking a meal, streaming a movie, enjoying a quiet morning coffee outside, or settling in after a day exploring Centralia and the surrounding area, the home is set up to feel simple, warm, and easy to enjoy.
           </p>
-          <a href="book.html" class="btn btn-primary">Book Your Stay</a>
+        </div>
+
+        <div class="card">
+          <h2>Good to know</h2>
+          <ul class="note-list">
+            <li>Non-smoking property</li>
+            <li>No pets</li>
+            <li>No parties without prior approval</li>
+            <li>Self check-in with smart lock</li>
+            <li>Outdoor security features are in place</li>
+            <li>Ample onsite parking is available</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -408,7 +446,7 @@
       </div>
       <div>
         <strong>Quick Links</strong>
-        <p class="muted-small"><a href="about.html">About</a><br><a href="gallery.html">Gallery</a><br><a href="amenities.html">Amenities</a></p>
+        <p class="muted-small"><a href="index.html">Home</a><br><a href="gallery.html">Gallery</a><br><a href="about.html">About</a></p>
       </div>
       <div>
         <strong>Contact</strong>
@@ -416,5 +454,6 @@
       </div>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

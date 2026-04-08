@@ -77,6 +77,60 @@
       display: none;
     }
 
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.28rem;
+      width: 2.9rem;
+      height: 2.9rem;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .menu-toggle span {
+      width: 1.1rem;
+      height: 2px;
+      background: var(--text);
+      border-radius: 999px;
+      margin: 0 auto;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .menu-toggle.is-open span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.is-open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.is-open span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+      border-top: 1px solid rgba(229, 231, 235, 0.8);
+      background: rgba(247, 245, 242, 0.98);
+    }
+
+    .mobile-menu-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 0.85rem 0 1rem;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -296,16 +350,15 @@
       }
     }
 
-    @media (max-width: 768px) {
+        @media (max-width: 768px) {
       .container,
       .reading-width {
         width: min(100% - 1.25rem, var(--max));
       }
 
       .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.7rem;
+        align-items: center;
+        gap: 0.75rem;
         padding: 0.65rem 0;
       }
 
@@ -313,61 +366,21 @@
         font-size: 0.98rem;
       }
 
-      .nav-links {
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .mobile-menu .btn {
         width: 100%;
-        gap: 0.5rem;
-        max-width: 100%;
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 0.25rem;
       }
 
       .btn {
         padding: 0.62rem 0.9rem;
         font-size: 0.95rem;
-      }
-
-      .hero,
-      .article-hero {
-        padding: 2rem 0 1.5rem;
-      }
-
-      .hero-grid,
-      .two-col,
-      .footer-grid,
-      .booking-options,
-      .amenity-grid,
-      .grid,
-      .stats-grid,
-      .reviews-grid,
-      .faq-grid,
-      .split {
-        grid-template-columns: 1fr !important;
-      }
-
-      .hero-image {
-        min-height: 260px;
-      }
-
-      .gallery-card {
-        flex: 0 0 85%;
-      }
-
-      .gallery-card img {
-        height: 220px;
-      }
-
-      h1 {
-        font-size: clamp(2rem, 8vw, 2.8rem);
-      }
-
-      h2 {
-        font-size: clamp(1.4rem, 6vw, 2rem);
-      }
-
-      p {
-        font-size: 1rem;
       }
     }
   </style>
@@ -375,8 +388,15 @@
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a href="#top" class="brand">Seminary Hill Retreat</a>
-      <nav class="nav-links">
+      <a href="index.html" class="brand">Seminary Hill Retreat</a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links desktop-nav" aria-label="Primary navigation">
         <a href="index.html" class="btn btn-secondary">Home</a>
         <a href="gallery.html" class="btn btn-secondary">Gallery</a>
         <a href="about.html" class="btn btn-secondary">About</a>
@@ -384,6 +404,16 @@
         <a href="book.html" class="btn btn-primary">Book Now</a>
       </nav>
     </div>
+
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+      <div class="container mobile-menu-inner">
+        <a href="index.html" class="btn btn-secondary">Home</a>
+        <a href="gallery.html" class="btn btn-secondary">Gallery</a>
+        <a href="about.html" class="btn btn-secondary">About</a>
+        <a href="amenities.html" class="btn btn-secondary">Amenities</a>
+        <a href="book.html" class="btn btn-primary">Book Now</a>
+      </div>
+    </nav>
   </header>
 
   <main id="top">
@@ -567,5 +597,6 @@
       </div>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
