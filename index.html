@@ -502,6 +502,126 @@
     text-decoration: underline;
   }
 
+    /* ===== PHOTO MODAL ===== */
+    .photo-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      overflow-y: auto;
+    }
+
+    .photo-modal-overlay.open {
+      display: block;
+    }
+
+    .photo-modal {
+      background: var(--bg);
+      border-radius: var(--radius);
+      margin: 2rem auto;
+      width: min(100% - 2rem, 1100px);
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .photo-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .photo-modal-close:hover {
+      background: #f3efe9;
+    }
+
+    .photo-modal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .photo-modal-grid img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: opacity 0.15s ease;
+      display: block;
+    }
+
+    .photo-modal-grid img:hover {
+      opacity: 0.85;
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .photo-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: rgba(0, 0, 0, 0.92);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-lightbox.open {
+      display: flex;
+    }
+
+    .photo-lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .photo-lightbox-back {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-lightbox-back:hover {
+      background: rgba(255,255,255,0.22);
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .photo-modal-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 768px) {
       .container,
       .reading-width {
@@ -584,7 +704,7 @@
           </p>
           <div class="hero-actions">
             <a href="#book" class="btn btn-primary">Check Availability</a>
-            <a href="#gallery" class="btn btn-secondary">View Photos</a>
+            <button type="button" class="btn btn-secondary" id="openPhotoModal">View Photos</button>
           </div>
         </div>
 
@@ -733,6 +853,122 @@
     </section>
   </main>
 
+  <!-- ===== PHOTO MODAL ===== -->
+  <div class="photo-modal-overlay" id="photoModalOverlay">
+    <div class="photo-modal">
+      <button class="photo-modal-close" id="photoModalClose" aria-label="Close gallery">&#x2715;</button>
+      <div class="photo-modal-grid">
+        <img src="Data/Gallery/Exterior 2.JPG" alt="Exterior">
+        <img src="Data/Gallery/Exterior 4.JPG" alt="Exterior">
+        <img src="Data/Gallery/Exterior 3.JPG" alt="Exterior">
+        <img src="Data/Gallery/Exterior 9.JPG" alt="Exterior">
+        <img src="Data/Gallery/Exterior 10.JPG" alt="Exterior">
+        <img src="Data/Gallery/Exterior 1.JPG" alt="Exterior">
+        <img src="Data/Gallery/Living Room 1.JPG" alt="Great Room">
+        <img src="Data/Gallery/Living Room 7.JPG" alt="Great Room">
+        <img src="Data/Gallery/Living Room 8.JPG" alt="Great Room">
+        <img src="Data/Gallery/Kitchen 1.JPG" alt="Kitchen">
+        <img src="Data/Gallery/Kitchen 2.JPG" alt="Kitchen">
+        <img src="Data/Gallery/Kitchen 3.JPG" alt="Kitchen">
+        <img src="Data/Gallery/Kitchen 4.JPG" alt="Kitchen">
+        <img src="Data/Gallery/Kitchen 5.JPG" alt="Kitchen">
+        <img src="Data/Gallery/Dining Room 1.JPG" alt="Dining Room">
+        <img src="Data/Gallery/Dining Room 2.JPG" alt="Dining Room">
+        <img src="Data/Gallery/Dining Room 3.JPG" alt="Dining Room">
+        <img src="Data/Gallery/Dining Room 4.JPG" alt="Dining Room">
+        <img src="Data/Gallery/Dining Room 6.JPG" alt="Dining Room">
+        <img src="Data/Gallery/Master 1.JPG" alt="Master Bedroom">
+        <img src="Data/Gallery/Master 2.JPG" alt="Master Bedroom">
+        <img src="Data/Gallery/Master 4.JPG" alt="Master Bedroom">
+        <img src="Data/Gallery/Master 5.JPG" alt="Master Bedroom">
+        <img src="Data/Gallery/Master 6.JPG" alt="Master Bedroom">
+        <img src="Data/Gallery/Bedroom 2.JPG" alt="Bedroom 2">
+        <img src="Data/Gallery/Bedroom 2 -2.JPG" alt="Bedroom 2">
+        <img src="Data/Gallery/Bedroom 2-3.JPG" alt="Bedroom 2">
+        <img src="Data/Gallery/Bedroom 2-5.JPG" alt="Bedroom 2">
+        <img src="Data/Gallery/Bedroom 3-1.JPG" alt="Bedroom 3">
+        <img src="Data/Gallery/Bedrrom 3-2.JPG" alt="Bedroom 3">
+        <img src="Data/Gallery/Bathroom 1.JPG" alt="Bathroom">
+        <img src="Data/Gallery/Master Bath 1.JPG" alt="Bathroom">
+        <img src="Data/Gallery/Hallway 1.JPG" alt="Hallway">
+        <img src="Data/Gallery/Hallway 2.JPG" alt="Hallway">
+        <img src="Data/Gallery/Hallway 3.JPG" alt="Hallway">
+        <img src="Data/Gallery/Hallway 5.JPG" alt="Hallway">
+        <img src="Data/Gallery/Garage 1.JPG" alt="Garage">
+        <img src="Data/Gallery/Garage 2.JPG" alt="Garage">
+        <img src="Data/Gallery/Master Closet 1.JPG" alt="Extra">
+        <img src="Data/Gallery/Master Closet 2.JPG" alt="Extra">
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="photo-lightbox" id="photoLightbox">
+    <button class="photo-lightbox-back" id="photoLightboxClose" aria-label="Back to gallery">&#x2190;</button>
+    <img id="photoLightboxImg" src="" alt="" />
+  </div>
+
+  <script>
+    (function () {
+      const overlay = document.getElementById("photoModalOverlay");
+      const modalClose = document.getElementById("photoModalClose");
+      const openBtn = document.getElementById("openPhotoModal");
+      const lightbox = document.getElementById("photoLightbox");
+      const lightboxImg = document.getElementById("photoLightboxImg");
+      const lightboxClose = document.getElementById("photoLightboxClose");
+      const gridImgs = document.querySelectorAll(".photo-modal-grid img");
+
+      function openModal() {
+        overlay.classList.add("open");
+        document.body.classList.add("modal-open");
+      }
+
+      function closeModal() {
+        overlay.classList.remove("open");
+        document.body.classList.remove("modal-open");
+      }
+
+      function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        lightbox.classList.add("open");
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("open");
+        lightboxImg.src = "";
+      }
+
+      openBtn.addEventListener("click", openModal);
+      modalClose.addEventListener("click", closeModal);
+
+      // Close modal when clicking outside the inner box
+      overlay.addEventListener("click", function (e) {
+        if (e.target === overlay) closeModal();
+      });
+
+      // Open lightbox when clicking a grid image
+      gridImgs.forEach(function (img) {
+        img.addEventListener("click", function () {
+          openLightbox(img.src, img.alt);
+        });
+      });
+
+      // Close lightbox — back arrow or click outside image
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          if (lightbox.classList.contains("open")) closeLightbox();
+          else if (overlay.classList.contains("open")) closeModal();
+        }
+      });
+    })();
+  </script>
+
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -744,7 +980,7 @@
       </div>
       <div>
         <strong>Contact</strong><br>
-        <a href = "mailto:kenkindred@yahoo.com">kenkindred@yahoo.com</a> <br>
+        <a href="/cdn-cgi/l/email-protection#38535d565351565c4a5d5c784159505757165b5755"><span class="__cf_email__" data-cfemail="1d767873767473796f78795d647c757272337e7270">[email&#160;protected]</span></a> <br>
         <a href="tel:+19492923129">(949) 292-3129</a>
       </div>
     </div>
