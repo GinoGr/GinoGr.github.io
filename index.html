@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stay at Seminary Hill Retreat</title>
-  <meta name="description" content="A cozy vacation rental website for Seminary Hill Retreat" />
+  <title>Seminary Hill Retreat | Centralia, WA Vacation Rental</title>
+  <meta property="og:title" content="Seminary Hill Retreat">
+  <meta name="description" content="Seminary Hill Retreat is a beautiful hilltop vacation rental in Centralia, Washington. Enjoy a peaceful getaway with forest views, modern amenities, and spacious accommodations.">
+  <meta property="og:image" content="https://seminaryhillretreat.com/Logo1.jpg">
+  <meta property="og:url" content="https://seminaryhillretreat.com">
+  <meta property="og:type" content="website">
   <style>
     :root {
       --bg: #f7f5f2;
@@ -55,10 +59,18 @@
     }
 
     .brand {
-      flex: 0 0 auto;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+
+    }
+    .brand img {
+      height: 80px;   /* key change */
+      width: auto;
+      border-radius: 6px; /* optional, softens edges */
     }
 
     .nav-links {
@@ -714,18 +726,16 @@
       }
     }
 
+    
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a href="index.html" class="brand">Seminary Hill Retreat</a>
-
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="brand">
+        <img src="Data/Gallery/logo1.JPG" alt="Seminary Hill Retreat Logo">
+        <span>Seminary Hill Retreat</span>
+      </div>
 
       <nav class="nav-links desktop-nav" aria-label="Primary navigation">
         <a href="index.html" class="btn btn-secondary">Home</a>
@@ -752,9 +762,10 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">"Best Airbnb in Centralia"</span>
-          <h1>Beautiful, custom built, hilltop, country retreat.</h1>
+          <h1 style="font-size: 3.5rem;">Seminary Hill Retreat,<br>Centralia, WA</h1>
+          <h4>Beautiful, custom built, hilltop, country retreat.</h4>
           <p>
-            Escape to a secluded 5-acre hilltop sanctuary with forest,
+            Seminary Hill Retreat is a secluded 5-acre hilltop sanctuary with forest,
             orchard, and mountain views in a beautifully crafted cedar home.
           </p>
           <div class="hero-actions">
@@ -786,7 +797,7 @@
           <div class="section-heading">
             <div>
               <h2>About the stay</h2>
-              <p>The best vacation rental in Centralia, Washington</p>
+              <p>Seminary Hill Retreat is a private vacation rental in Centralia, Washington</p>
             </div>
           </div>
           <p>
