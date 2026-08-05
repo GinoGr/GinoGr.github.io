@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Merch | Seminary Hill Retreat</title>
-  <meta name="description" content="Shop official Seminary Hill Retreat apparel inspired by the A-frame cabin, fir trees, Mt. Rainier, and quiet hilltop mornings in Centralia, Washington.">
+  <meta name="description" content="Shop official Seminary Hill Retreat merch, including apparel, drinkware, accessories, and keepsakes inspired by the A-frame cabin and quiet hilltop setting in Centralia, Washington.">
   <meta property="og:title" content="Seminary Hill Retreat Merch">
-  <meta property="og:description" content="Official Seminary Hill Retreat T-shirts and hoodies inspired by the hilltop retreat in Centralia, Washington.">
+  <meta property="og:description" content="Official Seminary Hill Retreat merch inspired by the hilltop retreat in Centralia, Washington.">
   <meta property="og:image" content="https://seminaryhillretreat.com/Data/Gallery/Logo1.jpg">
   <meta property="og:url" content="https://seminaryhillretreat.com/merch.html">
   <meta property="og:type" content="website">
@@ -346,13 +346,97 @@
       margin: 0;
     }
 
-    .shopify-embed-wrap {
-      width: 100%;
-      overflow: hidden;
+
+
+    .merch-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.15rem;
     }
 
-    #collection-component-1783034727354 {
-      min-height: 320px;
+    .merch-product-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .merch-product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .merch-image-wrap {
+      background: linear-gradient(135deg, #fbfaf8, #f1ece6);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .merch-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    .merch-product-body {
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .merch-product-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .merch-category {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border-radius: 999px;
+      padding: 0.24rem 0.55rem;
+      background: var(--cream);
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .merch-price {
+      color: var(--accent-dark);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .merch-product-body h3 {
+      margin-bottom: 0.45rem;
+      letter-spacing: -0.02em;
+    }
+
+    .merch-product-body p {
+      font-size: 0.96rem;
+      margin-bottom: 1.05rem;
+    }
+
+    .merch-product-body .btn {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .shop-note {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 0.93rem;
     }
 
     .after-shop {
@@ -400,6 +484,10 @@
         grid-template-columns: 1fr;
       }
 
+      .merch-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .hero-card { min-height: 340px; }
       .notice { grid-template-columns: 1fr; }
     }
@@ -417,6 +505,7 @@
       .btn { padding: 0.65rem 0.92rem; font-size: 0.95rem; }
       .section-heading { display: block; }
       .shop-topline { align-items: flex-start; }
+      .merch-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -463,17 +552,17 @@
           <span class="eyebrow">Official Seminary Hill merch</span>
           <h1 style="font-size: 3.5rem;">Take the hilltop home.</h1>
           <p>
-            Shop Seminary Hill Retreat apparel inspired by the A-frame cabin, tall fir trees,
+            Shop Seminary Hill Retreat merch inspired by the A-frame cabin, tall fir trees,
             Mt. Rainier views, and peaceful mornings in Centralia, Washington.
           </p>
           <div class="hero-actions">
-            <a href="#shopify-storefront" class="btn btn-primary">Shop Apparel</a>
+            <a href="#merch-store" class="btn btn-primary">Shop Merch</a>
             <a href="book.html" class="btn btn-secondary">Book Your Stay</a>
           </div>
           <div class="hero-note" aria-label="Collection highlights">
-            <span>T-shirts</span>
-            <span>Hoodies</span>
-            <span>Guest souvenirs</span>
+            <span>Apparel</span>
+            <span>Drinkware</span>
+            <span>Guest keepsakes</span>
           </div>
         </div>
 
@@ -489,11 +578,11 @@
     <section aria-labelledby="merch-intro-title">
       <div class="container">
         <span class="eyebrow">From Centralia, Washington</span>
-        <h2 id="merch-intro-title">Wear a piece of Seminary Hill Retreat.</h2>
+        <h2 id="merch-intro-title">Bring a piece of Seminary Hill Retreat home.</h2>
         <p>
-          Designed for guests who want to remember their stay, this apparel collection features
-          the A-frame cabin, long deck, fir trees, mountain backdrop, and SHR mark in a clean,
-          timeless style.
+          Designed for guests who want to remember their stay, this merch collection features
+          the A-frame cabin, long deck, fir trees, mountain backdrop, and SHR mark across
+          apparel, drinkware, accessories, and keepsakes.
         </p>
 
         <div class="intro-grid">
@@ -502,39 +591,163 @@
             <p>A cabin-and-mountain design that celebrates the view, the trees, and the quiet hilltop setting.</p>
           </article>
           <article class="card intro-card">
-            <strong>Made for everyday wear</strong>
-            <p>Comfortable shirts and hoodies for travel days, cool mornings, campfire nights, and casual weekends.</p>
+            <strong>Useful, giftable pieces</strong>
+            <p>Choose from apparel, drinkware, accessories, and small keepsakes made for daily use or easy gifting.</p>
           </article>
           <article class="card intro-card">
-            <strong>Order anytime</strong>
-            <p>Shop before your trip, during your stay, or after you get home as a simple reminder of Centralia.</p>
+            <strong>Order through Printify</strong>
+            <p>Product options, secure checkout, shipping, and fulfillment are handled through the Seminary Hill Retreat Printify store.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="shop-section" id="shopify-storefront" aria-labelledby="shop-title">
+    <section class="shop-section" id="merch-store" aria-labelledby="shop-title">
       <div class="container">
         <div class="section-heading">
           <div>
             <span class="eyebrow">Shop the collection</span>
-            <h2 id="shop-title">Official Seminary Hill Retreat apparel.</h2>
-            <p>Choose your item, select a size, and check out securely through Shopify.</p>
+            <h2 id="shop-title">Official Seminary Hill Retreat merch.</h2>
+            <p>Choose an item below and complete checkout through the Seminary Hill Retreat Printify store.</p>
           </div>
         </div>
 
         <div class="card shop-card">
           <div class="shop-topline">
-            <p><strong>Available now:</strong> Seminary Hill Retreat T-shirt and hoodie.</p>
-            <a href="#top" class="btn btn-secondary">Back to top</a>
+            <p><strong>Current collection:</strong> apparel, drinkware, accessories, and keepsakes inspired by the retreat.</p>
+            <a href="https://seminaryhillretreat.printify.me/products" class="btn btn-secondary" target="_blank" rel="noopener">View all on Printify</a>
           </div>
 
-          <div class="shopify-embed-wrap">
-            <div id='collection-component-1783660211718'></div>
-            <noscript>
-              <p>JavaScript is required to view the embedded Shopify collection. Please enable JavaScript or visit the Seminary Hill Retreat merch store directly.</p>
-            </noscript>
+          <div class="merch-grid">
+            <article class="card merch-product-card">
+              <a class="merch-image-wrap" href="https://seminaryhillretreat.printify.me/product/30649342" target="_blank" rel="noopener" aria-label="View Cabin &amp; Mountain T-Shirt on Printify">
+                <img src="https://images-api.printify.com/mockup/6a7280a1b311fb819e07e386/17645/103295/seminary-hill-retreat-tshirt-shr-cabin-mountain-tee.jpg?camera_label=front&revision=1785889047887&s=2048" alt="Seminary Hill Retreat Cabin &amp; Mountain T-Shirt" loading="lazy" referrerpolicy="no-referrer">
+              </a>
+              <div class="merch-product-body">
+                <div class="merch-product-topline">
+                  <span class="merch-category">Apparel</span>
+                  <span class="merch-price">$25.99</span>
+                </div>
+                <h3>Cabin &amp; Mountain T-Shirt</h3>
+                <p>A classic SHR logo tee featuring the A-frame cabin, fir trees, mountain backdrop, and Centralia mark.</p>
+                <a class="btn btn-primary" href="https://seminaryhillretreat.printify.me/product/30649342" target="_blank" rel="noopener">View Product</a>
+              </div>
+            </article>
+            <article class="card merch-product-card">
+              <a class="merch-image-wrap" href="https://seminaryhillretreat.printify.me/product/30649326" target="_blank" rel="noopener" aria-label="View Heavy Blend Hooded Sweatshirt on Printify">
+                <img src="https://images-api.printify.com/mockup/6a7280a4b311fb819e07e387/32896/98424/unisex-heavy-blend-hooded-sweatshirt.jpg?camera_label=front&revision=1785888998286&s=2048" alt="Seminary Hill Retreat Heavy Blend Hooded Sweatshirt" loading="lazy" referrerpolicy="no-referrer">
+              </a>
+              <div class="merch-product-body">
+                <div class="merch-product-topline">
+                  <span class="merch-category">Apparel</span>
+                  <span class="merch-price">$35.97</span>
+                </div>
+                <h3>Heavy Blend Hooded Sweatshirt</h3>
+                <p>A cozy pullover hoodie with the Seminary Hill Retreat cabin artwork printed on the front.</p>
+                <a class="btn btn-primary" href="https://seminaryhillretreat.printify.me/product/30649326" target="_blank" rel="noopener">View Product</a>
+              </div>
+            </article>
+            <article class="card merch-product-card">
+              <a class="merch-image-wrap" href="https://seminaryhillretreat.printify.me/product/30649377" target="_blank" rel="noopener" aria-label="View Unisex Sweatshirt on Printify">
+                <img src="https://images-api.printify.com/mockup/6a728099b311fb819e07e384/36130/234/unisex-sweatshirt.jpg?camera_label=front&revision=1785889087634&s=2048" alt="Seminary Hill Retreat Unisex Sweatshirt" loading="lazy" referrerpolicy="no-referrer">
+              </a>
+              <div class="merch-product-body">
+                <div class="merch-product-topline">
+                  <span class="merch-category">Apparel</span>
+                  <span class="merch-price">$39.20</span>
+                </div>
+                <h3>Unisex Sweatshirt</h3>
+                <p>A soft crewneck sweatshirt for cool mornings, travel days, and relaxed weekends.</p>
+                <a class="btn btn-primary" href="https://seminaryhillretreat.printify.me/product/30649377" target="_blank" rel="noopener">View Product</a>
+              </div>
+            </article>
+            <article class="card merch-product-card">
+              <a class="merch-image-wrap" href="https://seminaryhillretreat.printify.me/product/30649385" target="_blank" rel="noopener" aria-label="View Women’s V-Neck Cabin Tee on Printify">
+                <img src="https://images-api.printify.com/mockup/6a72808db311fb819e07e383/162849/118554/copy-of-seminary-hill-retreat-v-neck-tee-womens-cabin-shirt.jpg?camera_label=front-side&revision=1785889102480&s=2048" alt="Seminary Hill Retreat Women’s V-Neck Cabin Tee" loading="lazy" referrerpolicy="no-referrer">
+              </a>
+              <div class="merch-product-body">
+                <div class="merch-product-topline">
+                  <span class="merch-category">Apparel</span>
+                  <span class="merch-price">$24.68</span>
+                </div>
+                <h3>Women’s V-Neck Cabin Tee</h3>
+                <p>A relaxed V-neck tee with the cabin-and-mountain artwork in a simple retreat-inspired style.</p>
+                <a class="btn btn-primary" href="https://seminaryhillretreat.printify.me/product/30649385" target="_blank" rel="noopener">View Product</a>
+              </div>
+            </article>
+            <article class="card merch-product-card">
+              <a class="merch-image-wrap" href="https://seminaryhillretreat.printify.me/product/30649371" target="_blank" rel="noopener" aria-label="View Embroidered Dad Hat on Printify">
+                <img src="https://images-api.printify.com/mockup/6a72809db311fb819e07e385/244951/124404/dad-hat-seminary-hill-retreat-embroidered-cabin-cap.jpg?camera_label=front&revision=1785889069030&s=2048" alt="Seminary Hill Retreat Embroidered Dad Hat" loading="lazy" referrerpolicy="no-referrer">
+              </a>
+              <div class="merch-product-body">
+                <div class="merch-product-topline">
+                  <span class="merch-category">Accessories</span>
+                  <span class="merch-price">$18.55</span>
+                </div>
+                <h3>Embroidered Dad Hat</h3>
+                <p>A relaxed cabin cap with embroidered Seminary Hill Retreat artwork and an adjustable fit.</p>
+                <a class="btn btn-primary" href="https://seminaryhillretreat.printify.me/product/30649371" target="_blank" rel="noopener">View Product</a>
+              </div>
+            </article>
+            <article class="card merch-product-card">
+              <a class="merch-image-wrap" href="https://seminaryhillretreat.printify.me/product/30649420" target="_blank" rel="noopener" aria-label="View Ceramic Cabin Mug on Printify">
+                <img src="https://images-api.printify.com/mockup/6a7281d0628f74256e044a20/104692/101750/seminary-hill-retreat-centralia-wa-ceramic-mug-mountain-cabin-coffee-cup-11oz15oz.jpg?camera_label=front&revision=1785889435367&s=2048" alt="Seminary Hill Retreat Ceramic Cabin Mug" loading="lazy" referrerpolicy="no-referrer">
+              </a>
+              <div class="merch-product-body">
+                <div class="merch-product-topline">
+                  <span class="merch-category">Drinkware</span>
+                  <span class="merch-price">$13.99</span>
+                </div>
+                <h3>Ceramic Cabin Mug</h3>
+                <p>A glossy coffee mug featuring the A-frame cabin, mountain backdrop, and Centralia, Washington lettering.</p>
+                <a class="btn btn-primary" href="https://seminaryhillretreat.printify.me/product/30649420" target="_blank" rel="noopener">View Product</a>
+              </div>
+            </article>
+            <article class="card merch-product-card">
+              <a class="merch-image-wrap" href="https://seminaryhillretreat.printify.me/product/30649422" target="_blank" rel="noopener" aria-label="View 9oz Scented Soy Candle on Printify">
+                <img src="https://images-api.printify.com/mockup/6a7281e411b5f896220390e4/93541/47078/seminary-hill-retreat-soy-candle-9oz-scented-jar-centralia-wa.jpg?camera_label=front&revision=1785889435841&s=2048" alt="Seminary Hill Retreat 9oz Scented Soy Candle" loading="lazy" referrerpolicy="no-referrer">
+              </a>
+              <div class="merch-product-body">
+                <div class="merch-product-topline">
+                  <span class="merch-category">Home</span>
+                  <span class="merch-price">$22.15</span>
+                </div>
+                <h3>9oz Scented Soy Candle</h3>
+                <p>A retreat-inspired soy candle in a reusable glass jar with the Seminary Hill Retreat label.</p>
+                <a class="btn btn-primary" href="https://seminaryhillretreat.printify.me/product/30649422" target="_blank" rel="noopener">View Product</a>
+              </div>
+            </article>
+            <article class="card merch-product-card">
+              <a class="merch-image-wrap" href="https://seminaryhillretreat.printify.me/product/30649421" target="_blank" rel="noopener" aria-label="View Canvas Tote Bag on Printify">
+                <img src="https://images-api.printify.com/mockup/6a7281e40df81a5d7f04ff21/101409/93895/tote-bag-lakeside-cabin-retreat-canvas-tote-lakeside-hill-retreat-vintage-camp-design.jpg?camera_label=front&revision=1785889435687&s=2048" alt="Seminary Hill Retreat Canvas Tote Bag" loading="lazy" referrerpolicy="no-referrer">
+              </a>
+              <div class="merch-product-body">
+                <div class="merch-product-topline">
+                  <span class="merch-category">Accessories</span>
+                  <span class="merch-price">$19.99</span>
+                </div>
+                <h3>Canvas Tote Bag</h3>
+                <p>A natural canvas tote with the SHR cabin artwork, made for errands, books, markets, and travel days.</p>
+                <a class="btn btn-primary" href="https://seminaryhillretreat.printify.me/product/30649421" target="_blank" rel="noopener">View Product</a>
+              </div>
+            </article>
+            <article class="card merch-product-card">
+              <a class="merch-image-wrap" href="https://seminaryhillretreat.printify.me/product/30649419" target="_blank" rel="noopener" aria-label="View Cabin Mountain Vinyl Sticker on Printify">
+                <img src="https://images-api.printify.com/mockup/6a7281e42ac1b7371d0301e5/45750/16655/seminary-hill-retreat-sticker-cabin-mountain-a-frame-vinyl-decal-centralia-wa.jpg?camera_label=front&revision=1785889435562&s=2048" alt="Seminary Hill Retreat Cabin Mountain Vinyl Sticker" loading="lazy" referrerpolicy="no-referrer">
+              </a>
+              <div class="merch-product-body">
+                <div class="merch-product-topline">
+                  <span class="merch-category">Keepsakes</span>
+                  <span class="merch-price">$3.99</span>
+                </div>
+                <h3>Cabin Mountain Vinyl Sticker</h3>
+                <p>A glossy vinyl sticker with the Seminary Hill Retreat cabin, trees, mountain, and Centralia mark.</p>
+                <a class="btn btn-primary" href="https://seminaryhillretreat.printify.me/product/30649419" target="_blank" rel="noopener">View Product</a>
+              </div>
+            </article>
           </div>
+
+          <p class="shop-note">Product options, availability, shipping, returns, and checkout are handled through Printify.</p>
         </div>
       </div>
     </section>
@@ -544,9 +757,9 @@
         <div class="notice">
           <p>
             <strong>Staying at the retreat?</strong><br>
-            Scan the merch QR code during your visit or order online anytime as a souvenir from Seminary Hill.
+            Scan the merch QR code during your visit or browse the online collection anytime through the Seminary Hill Retreat merch page.
           </p>
-          <a href="book.html" class="btn btn-primary">Plan a Stay</a>
+          <a href="#merch-store" class="btn btn-primary">Shop Merch</a>
         </div>
       </div>
     </section>
@@ -569,158 +782,6 @@
       </div>
     </div>
   </footer>
-
-  <script type="text/javascript">
-/*<![CDATA[*/
-(function () {
-  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-  if (window.ShopifyBuy) {
-    if (window.ShopifyBuy.UI) {
-      ShopifyBuyInit();
-    } else {
-      loadScript();
-    }
-  } else {
-    loadScript();
-  }
-  function loadScript() {
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = scriptURL;
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-    script.onload = ShopifyBuyInit;
-  }
-  function ShopifyBuyInit() {
-    var client = ShopifyBuy.buildClient({
-      domain: 'seminary-hill-retreat-merch.myshopify.com',
-      storefrontAccessToken: '2f5aa373e418475c5ef7c9cb19912434',
-    });
-    ShopifyBuy.UI.onReady(client).then(function (ui) {
-      ui.createComponent('collection', {
-        id: '476811165932',
-        node: document.getElementById('collection-component-1783660211718'),
-        moneyFormat: '%24%7B%7Bamount%7D%7D',
-        options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "calc(33.33333% - 30px)",
-          "margin-left": "30px",
-          "margin-bottom": "50px",
-          "width": "calc(33.33333% - 30px)"
-        },
-        "img": {
-          "height": "calc(100% - 15px)",
-          "position": "absolute",
-          "left": "0",
-          "right": "0",
-          "top": "0"
-        },
-        "imgWrapper": {
-          "padding-top": "calc(75% + 15px)",
-          "position": "relative",
-          "height": "0"
-        }
-      },
-      "button": {
-        ":hover": {
-          "background-color": "#7d5536"
-        },
-        "background-color": "#8b5e3c",
-        ":focus": {
-          "background-color": "#7d5536"
-        },
-        "border-radius": "16px",
-        "padding-left": "53px",
-        "padding-right": "53px"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-30px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        ":hover": {
-          "background-color": "#7d5536"
-        },
-        "background-color": "#8b5e3c",
-        ":focus": {
-          "background-color": "#7d5536"
-        },
-        "border-radius": "16px",
-        "padding-left": "53px",
-        "padding-right": "53px"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {},
-  "cart": {
-    "styles": {
-      "button": {
-        ":hover": {
-          "background-color": "#7d5536"
-        },
-        "background-color": "#8b5e3c",
-        ":focus": {
-          "background-color": "#7d5536"
-        },
-        "border-radius": "16px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    }
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "background-color": "#8b5e3c",
-        ":hover": {
-          "background-color": "#7d5536"
-        },
-        ":focus": {
-          "background-color": "#7d5536"
-        }
-      }
-    }
-  }
-},
-      });
-    });
-  }
-})();
-/*]]>*/
-</script>
-
   <script>
     (function () {
       const menuToggle = document.querySelector('.menu-toggle');
