@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="description" content="Seminary Hill Retreat on-site merchandise checkout confirmation." />
+  <title>Thank You | Seminary Hill Retreat Merch</title>
+  <link rel="icon" type="image/png" href="Data/Gallery/Logo1.png" />
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #52606d;
+      --accent: #8b5e3c;
+      --accent-dark: #6f4a2f;
+      --cream: #efe4db;
+      --border: #e5e7eb;
+      --success: #355e47;
+      --max: 920px;
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(139, 94, 60, 0.10), transparent 30rem),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      border-bottom: 1px solid rgba(229, 231, 235, 0.9);
+      background: rgba(247, 245, 242, 0.95);
+    }
+
+    .nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.55rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+    }
+
+    .brand img {
+      width: 68px;
+      height: 68px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      padding: 4rem 0;
+    }
+
+    .confirmation-card {
+      overflow: hidden;
+      border: 1px solid rgba(229, 231, 235, 0.78);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .confirmation-hero {
+      padding: clamp(2rem, 6vw, 4rem);
+      text-align: center;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.90), rgba(255,255,255,0.96)),
+        url('Data/Gallery/Exterior 2.JPG') center/cover;
+    }
+
+    .checkmark {
+      width: 82px;
+      height: 82px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 1.25rem;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--success);
+      box-shadow: 0 12px 30px rgba(53, 94, 71, 0.22);
+    }
+
+    .checkmark svg { width: 42px; height: 42px; }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 0.85rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      color: var(--accent-dark);
+      background: var(--cream);
+      font-size: 0.9rem;
+      font-style: italic;
+      font-weight: 800;
+    }
+
+    h1, h2 {
+      line-height: 1.12;
+      margin: 0 0 1rem;
+      letter-spacing: -0.035em;
+    }
+
+    h1 { font-size: clamp(2.2rem, 6vw, 4rem); }
+    h2 { font-size: clamp(1.45rem, 3vw, 2rem); }
+    p { margin: 0 0 1rem; color: var(--muted); }
+
+    .lead {
+      max-width: 58ch;
+      margin-right: auto;
+      margin-left: auto;
+      font-size: 1.08rem;
+    }
+
+    .receipt-note {
+      margin: 1.4rem auto 0;
+      padding: 1rem 1.1rem;
+      border: 1px solid #d5dfd8;
+      border-radius: 16px;
+      color: #294a38;
+      background: #f0f7f2;
+      text-align: left;
+    }
+
+    .receipt-note strong { display: block; margin-bottom: 0.25rem; }
+    .receipt-note p { margin: 0; color: #3d5c49; }
+
+    .confirmation-details {
+      padding: clamp(1.4rem, 4vw, 2.2rem);
+      border-top: 1px solid var(--border);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .step {
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fbfaf8;
+    }
+
+    .step strong { display: block; margin-bottom: 0.25rem; }
+    .step p { margin: 0; font-size: 0.9rem; }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.05rem;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary { color: #fff; background: var(--accent); }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn-secondary { border-color: var(--border); background: #fff; }
+    .btn-secondary:hover { color: #fff; border-color: var(--accent); background: var(--accent); }
+
+    .site-footer {
+      padding: 1.5rem 0 2.25rem;
+      border-top: 1px solid var(--border);
+      background: #f3efe9;
+      text-align: center;
+    }
+
+    .site-footer p { margin: 0; font-size: 0.9rem; }
+
+    @media (max-width: 720px) {
+      .container { width: min(100% - 1.25rem, var(--max)); }
+      .brand img { display: none; }
+      main { padding: 2rem 0; }
+      .steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Seminary Hill Retreat home">
+        <img src="Data/Gallery/Logo1.JPG" alt="Seminary Hill Retreat logo" />
+        <span>Seminary Hill Retreat<small>On-site merch checkout</small></span>
+      </a>
+      <a class="btn btn-secondary" href="onsite-merch.html">Back to Merch</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <article class="confirmation-card">
+        <div class="confirmation-hero">
+          <div class="checkmark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+          </div>
+          <span class="eyebrow">Thank you</span>
+          <h1>Your merch checkout is complete.</h1>
+          <p class="lead">
+            PayPal has returned you to Seminary Hill Retreat. Check that PayPal shows the payment as completed
+            and that you received a receipt before taking merchandise from the display.
+          </p>
+
+          <div class="receipt-note">
+            <strong>Take only what appears on your receipt.</strong>
+            <p>Match the product, size or option, and quantity before removing anything from the on-site inventory.</p>
+          </div>
+        </div>
+
+        <div class="confirmation-details">
+          <h2>Before you go</h2>
+          <div class="steps">
+            <div class="step">
+              <strong>1. Confirm payment</strong>
+              <p>Verify the PayPal confirmation or receipt says the transaction was completed.</p>
+            </div>
+            <div class="step">
+              <strong>2. Match the order</strong>
+              <p>Take the exact product, size, option, and quantity shown on the receipt.</p>
+            </div>
+            <div class="step">
+              <strong>3. Enjoy your merch</strong>
+              <p>Thank you for supporting Seminary Hill Retreat and using the guest honor system.</p>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="onsite-merch.html">Make Another Purchase</a>
+            <a class="btn btn-secondary" href="index.html">Return to Retreat Site</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Questions about an on-site purchase? Contact <a href="mailto:ken@seminaryhillretreat.com">ken@seminaryhillretreat.com</a> or <a href="tel:+19492923129">(949) 292-3129</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
