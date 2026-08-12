@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, nofollow, noarchive" name="robots"/>
+<meta content="Guest self-checkout for merchandise physically available at Seminary Hill Retreat." name="description"/>
+<title>Guest Merch Checkout | Seminary Hill Retreat</title>
+<link href="Data/Gallery/Logo1.png" rel="icon" type="image/png"/>
+<!-- PayPal Shopping Cart setup: include once per page. -->
+<script data-merchant-id="8LV85PXSJSCWQ" src="https://www.paypalobjects.com/ncp/cart/cart.js"></script>
+<style>
+    :root {
+      --bg: #f7f5f2;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #52606d;
+      --accent: #8b5e3c;
+      --accent-dark: #6f4a2f;
+      --cream: #efe4db;
+      --border: #e5e7eb;
+      --success: #355e47;
+      --warning: #7a4d23;
+      --max: 1120px;
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+      --soft-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(139, 94, 60, 0.08), transparent 30rem),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 245, 242, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.9);
+    }
+
+    .nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.55rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .brand img {
+      width: 68px;
+      height: 68px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .brand-copy { min-width: 0; }
+    .brand-copy strong,
+    .brand-copy small { display: block; }
+    .brand-copy strong { font-size: 1.03rem; }
+    .brand-copy small {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .cart-area {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex: 0 0 auto;
+    }
+
+    .cart-label {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.72rem 1rem;
+      border-radius: 999px;
+      font-weight: 800;
+      line-height: 1.2;
+      white-space: nowrap;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: var(--accent);
+      box-shadow: none;
+    }
+
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.76);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      color: #fff;
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 0.85rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      color: var(--accent-dark);
+      background: var(--cream);
+      font-size: 0.9rem;
+      font-style: italic;
+      font-weight: 800;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.12;
+      margin: 0 0 1rem;
+      letter-spacing: -0.035em;
+    }
+
+    h1 { font-size: clamp(2.45rem, 6vw, 4.5rem); }
+    h2 { font-size: clamp(1.85rem, 3.5vw, 2.75rem); }
+    h3 { font-size: 1.15rem; }
+    p { margin: 0 0 1rem; color: var(--muted); }
+
+    .hero { padding: 4rem 0 2.6rem; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-copy p {
+      max-width: 62ch;
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.45rem;
+    }
+
+    .hero-note {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-note span {
+      padding: 0.38rem 0.7rem;
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.76);
+    }
+
+    .hero-card {
+      min-height: 410px;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      overflow: hidden;
+      padding: 1.25rem;
+      border: 1px solid rgba(229, 231, 235, 0.75);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(31, 41, 51, 0.08), rgba(31, 41, 51, 0.60)),
+        url('Data/Gallery/Exterior 2.JPG') center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      border-radius: calc(var(--radius) - 8px);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      position: relative;
+      z-index: 1;
+      max-width: 430px;
+      padding: 1rem 1.1rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--soft-shadow);
+      font-weight: 900;
+    }
+
+    .hero-badge small {
+      display: block;
+      margin-top: 0.3rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .instructions-section { padding: 1.25rem 0 3rem; }
+
+    .instructions-card {
+      padding: clamp(1.2rem, 3vw, 2rem);
+      border: 1px solid #dccfc3;
+      border-radius: var(--radius);
+      background: var(--cream);
+    }
+
+    .instructions-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .step {
+      min-height: 100%;
+      padding: 1rem;
+      border: 1px solid rgba(139, 94, 60, 0.15);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.70);
+    }
+
+    .step-number {
+      width: 2rem;
+      height: 2rem;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: 0.65rem;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--accent);
+      font-weight: 900;
+    }
+
+    .step strong { display: block; margin-bottom: 0.25rem; }
+    .step p { margin: 0; font-size: 0.92rem; }
+
+    .shop-section { padding: 2.3rem 0 3.5rem; }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .section-heading p { max-width: 70ch; margin-bottom: 0; }
+
+    .stock-notice {
+      max-width: 35rem;
+      padding: 0.75rem 0.95rem;
+      border: 1px solid #ead3b8;
+      border-radius: 14px;
+      color: var(--warning);
+      background: #fff7eb;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .merch-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      overflow: hidden;
+      border: 1px solid rgba(229, 231, 235, 0.78);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .product-card {
+      min-width: 0;
+      min-height: 100%;
+      padding: clamp(0.75rem, 1.6vw, 1.1rem);
+      overflow: visible;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-image {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, #fbfaf8, #f1ece6);
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    .product-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 1.15rem;
+    }
+
+    .product-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .product-category {
+      display: inline-flex;
+      width: fit-content;
+      padding: 0.24rem 0.55rem;
+      border-radius: 999px;
+      color: var(--accent-dark);
+      background: var(--cream);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .product-price {
+      color: var(--accent-dark);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .product-body h3 { margin-bottom: 0.45rem; letter-spacing: -0.02em; }
+    .product-body p { margin-bottom: 0.9rem; font-size: 0.94rem; }
+
+    .product-meta {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+    }
+
+    .product-meta span {
+      padding: 0.25rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      background: #fbfaf8;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .paypal-button-wrap {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      margin-top: 0;
+    }
+
+    paypal-add-to-cart-button {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+    }
+
+    paypal-cart-button {
+      display: inline-block;
+      max-width: 100%;
+    }
+
+    .button-pending {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px dashed #c7b5a7;
+      border-radius: 14px;
+      color: var(--muted);
+      background: #fbfaf8;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .cart-reminder {
+      position: sticky;
+      bottom: 1rem;
+      z-index: 90;
+      width: min(100% - 2rem, 680px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 1.5rem auto 0;
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(111, 74, 47, 0.18);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .cart-reminder p { margin: 0; font-size: 0.9rem; }
+
+    .after-shop { padding: 1rem 0 3.2rem; }
+
+    .notice {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.3rem;
+      border: 1px solid #dccfc3;
+      border-radius: var(--radius);
+      background: var(--cream);
+    }
+
+    .notice p { margin: 0; }
+
+    .site-footer {
+      padding: 2rem 0 3rem;
+      border-top: 1px solid var(--border);
+      background: #f3efe9;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .muted-small { color: var(--muted); font-size: 0.92rem; }
+    .footer-grid a { text-decoration: underline; text-decoration-color: rgba(111, 74, 47, 0.35); }
+    .footer-grid a:hover { color: var(--accent-dark); }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-card { min-height: 330px; }
+      .instructions-grid { grid-template-columns: repeat(2, 1fr); }
+      .merch-grid { grid-template-columns: 1fr; }
+      .notice { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: min(100% - 1.25rem, var(--max)); }
+      .nav { min-height: 72px; }
+      .brand img { display: none; }
+      .brand-copy strong { font-size: 0.94rem; }
+      .brand-copy small { font-size: 0.75rem; }
+      .cart-label { display: none; }
+      .hero { padding: 2.8rem 0 2rem; }
+      .instructions-grid,
+      .merch-grid { grid-template-columns: 1fr; }
+      .section-heading { display: block; }
+      .stock-notice { margin-top: 1rem; }
+      .cart-reminder { align-items: flex-start; }
+      .cart-reminder p { display: none; }
+    }
+  
+
+    .paypal-card-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .onsite-only-label {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .product-card > noscript {
+      display: block;
+      padding: 1rem;
+      color: var(--muted);
+      text-align: center;
+    }
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="container nav">
+<a aria-label="Seminary Hill Retreat home" class="brand" href="index.html">
+<img alt="Seminary Hill Retreat logo" src="Data/Gallery/Logo1.JPG"/>
+<span class="brand-copy">
+<strong>Seminary Hill Retreat</strong>
+<small>On-site guest merch checkout</small>
+</span>
+</a>
+<div aria-label="Shopping cart" class="cart-area">
+<span class="cart-label">Ready to check out?</span>
+<paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+<script>cartPaypal.Cart({ id: "pp-view-cart" })</script>
+</div>
+</div>
+</header>
+<main id="top">
+<section class="hero">
+<div class="container hero-grid">
+<div class="hero-copy">
+<span class="eyebrow">Guest self-checkout</span>
+<h1>Choose it. Pay for it. Take it.</h1>
+<p>
+            This page is only for merchandise that is physically available inside Seminary Hill Retreat.
+            Select the exact product, size, and quantity you are taking, add it to your cart, and finish
+            checkout before removing it from the display.
+          </p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#onsite-products">Shop On-Site Merch</a>
+<a class="btn btn-secondary" href="merch.html">Shop Shipped Merch</a>
+</div>
+<div aria-label="Checkout details" class="hero-note">
+<span>On-site pickup only</span>
+<span>Secure PayPal checkout</span>
+<span>No shipping needed</span>
+</div>
+</div>
+<div class="hero-card">
+<div class="hero-badge">
+            Thank you for using the honor system.
+            <small>Please complete payment and wait for your PayPal receipt before taking an item.</small>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="how-it-works-title" class="instructions-section">
+<div class="container">
+<div class="instructions-card">
+<span class="eyebrow">How it works</span>
+<h2 id="how-it-works-title">Four quick steps.</h2>
+<div class="instructions-grid">
+<article class="step">
+<span class="step-number">1</span>
+<strong>Check the shelf</strong>
+<p>Confirm that the exact item and size you want is physically available.</p>
+</article>
+<article class="step">
+<span class="step-number">2</span>
+<strong>Add the exact item</strong>
+<p>Choose the matching size or option in PayPal and add the correct quantity.</p>
+</article>
+<article class="step">
+<span class="step-number">3</span>
+<strong>Complete checkout</strong>
+<p>Open your cart, review every item, and pay securely through PayPal.</p>
+</article>
+<article class="step">
+<span class="step-number">4</span>
+<strong>Take your merch</strong>
+<p>After payment is confirmed, take only the items shown on your receipt.</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="shop-title" class="shop-section" id="onsite-products">
+<div class="container">
+<div class="section-heading">
+<div>
+<span class="eyebrow">Available at the retreat</span>
+<h2 id="shop-title">On-site merch.</h2>
+<p>Prices below are for merchandise already stocked at the retreat. For shipped orders, use the regular merch page.</p>
+</div>
+<div class="stock-notice">Only purchase a size or item that is physically in stock.</div>
+</div>
+<div class="merch-grid">
+<article aria-label="SHR T-Shirt" class="card product-card" id="tshirt"><div class="paypal-card-topline"><span class="product-category">Apparel</span><span class="onsite-only-label">On-site pickup</span></div><div class="paypal-button-wrap"><paypal-add-to-cart-button data-id="2XUFR7X7NX6CY"></paypal-add-to-cart-button><script>cartPaypal.AddToCart({ id: "2XUFR7X7NX6CY" })</script></div><noscript>SHR T-Shirt — $15. JavaScript is required to use on-site checkout.</noscript></article>
+<article aria-label="SHR Hoodie" class="card product-card" id="hoodie"><div class="paypal-card-topline"><span class="product-category">Apparel</span><span class="onsite-only-label">On-site pickup</span></div><div class="paypal-button-wrap"><paypal-add-to-cart-button data-id="GN3YNVCWWH49A"></paypal-add-to-cart-button><script>cartPaypal.AddToCart({ id: "GN3YNVCWWH49A" })</script></div><noscript>SHR Hoodie — $30. JavaScript is required to use on-site checkout.</noscript></article>
+<article aria-label="SHR Sweater" class="card product-card" id="sweater"><div class="paypal-card-topline"><span class="product-category">Apparel</span><span class="onsite-only-label">On-site pickup</span></div><div class="paypal-button-wrap"><paypal-add-to-cart-button data-id="G3C3F89PAGPDG"></paypal-add-to-cart-button><script>cartPaypal.AddToCart({ id: "G3C3F89PAGPDG" })</script></div><noscript>SHR Sweater — $35. JavaScript is required to use on-site checkout.</noscript></article>
+<article aria-label="SHR V-Neck" class="card product-card" id="vneck"><div class="paypal-card-topline"><span class="product-category">Apparel</span><span class="onsite-only-label">On-site pickup</span></div><div class="paypal-button-wrap"><paypal-add-to-cart-button data-id="87SU3259HETNY"></paypal-add-to-cart-button><script>cartPaypal.AddToCart({ id: "87SU3259HETNY" })</script></div><noscript>SHR V-Neck — $20. JavaScript is required to use on-site checkout.</noscript></article>
+<article aria-label="SHR Hat" class="card product-card" id="hat"><div class="paypal-card-topline"><span class="product-category">Accessory</span><span class="onsite-only-label">On-site pickup</span></div><div class="paypal-button-wrap"><paypal-add-to-cart-button data-id="7NMBZHHNR3CWE"></paypal-add-to-cart-button><script>cartPaypal.AddToCart({ id: "7NMBZHHNR3CWE" })</script></div><noscript>SHR Hat — $15. JavaScript is required to use on-site checkout.</noscript></article>
+<article aria-label="SHR Mug" class="card product-card" id="mug"><div class="paypal-card-topline"><span class="product-category">Drinkware</span><span class="onsite-only-label">On-site pickup</span></div><div class="paypal-button-wrap"><paypal-add-to-cart-button data-id="7GJ4RWEEFM76U"></paypal-add-to-cart-button><script>cartPaypal.AddToCart({ id: "7GJ4RWEEFM76U" })</script></div><noscript>SHR Mug — $10–$12. JavaScript is required to use on-site checkout.</noscript></article>
+<article aria-label="SHR Candle" class="card product-card" id="candle"><div class="paypal-card-topline"><span class="product-category">Home</span><span class="onsite-only-label">On-site pickup</span></div><div class="paypal-button-wrap"><paypal-add-to-cart-button data-id="EQGSRGZJXL2CN"></paypal-add-to-cart-button><script>cartPaypal.AddToCart({ id: "EQGSRGZJXL2CN" })</script></div><noscript>SHR Candle — $20. JavaScript is required to use on-site checkout.</noscript></article>
+<article aria-label="SHR Tote Bag" class="card product-card" id="tote"><div class="paypal-card-topline"><span class="product-category">Accessory</span><span class="onsite-only-label">On-site pickup</span></div><div class="paypal-button-wrap"><paypal-add-to-cart-button data-id="4MHX6H46C4JDE"></paypal-add-to-cart-button><script>cartPaypal.AddToCart({ id: "4MHX6H46C4JDE" })</script></div><noscript>SHR Tote Bag — $15. JavaScript is required to use on-site checkout.</noscript></article>
+<article aria-label="SHR Sticker" class="card product-card" id="sticker"><div class="paypal-card-topline"><span class="product-category">Keepsake</span><span class="onsite-only-label">On-site pickup</span></div><div class="paypal-button-wrap"><paypal-add-to-cart-button data-id="CQZEQQ4SXJBKS"></paypal-add-to-cart-button><script>cartPaypal.AddToCart({ id: "CQZEQQ4SXJBKS" })</script></div><noscript>SHR Sticker — $4–$6. JavaScript is required to use on-site checkout.</noscript></article>
+</div>
+<div aria-label="Cart reminder" class="cart-reminder">
+<p>Add everything you are taking, then open your cart to review and pay.</p>
+<paypal-cart-button data-id="pp-view-cart-bottom"></paypal-cart-button>
+<script>cartPaypal.Cart({ id: "pp-view-cart-bottom" })</script>
+</div>
+</div>
+</section>
+<section aria-label="On-site checkout note" class="after-shop">
+<div class="container">
+<div class="notice">
+<p>
+<strong>Need a product shipped instead?</strong><br/>
+            Use the regular merch page so Printify can produce and deliver it to your address.
+          </p>
+<a class="btn btn-primary" href="merch.html">Open Shipped Merch</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<strong>Seminary Hill Retreat</strong>
+<p class="muted-small">Guest self-checkout for merchandise physically stocked at the retreat.</p>
+</div>
+<div>
+<strong>Helpful links</strong>
+<p class="muted-small"><a href="index.html">Retreat home</a><br/><a href="merch.html">Shipped merch</a><br/><a href="#top">Back to top</a></p>
+</div>
+<div>
+<strong>Questions?</strong><br/>
+<a href="mailto:ken@seminaryhillretreat.com">ken@seminaryhillretreat.com</a><br/>
+<a href="tel:+19492923129">(949) 292-3129</a>
+</div>
+</div>
+</footer>
+</body>
+</html>
